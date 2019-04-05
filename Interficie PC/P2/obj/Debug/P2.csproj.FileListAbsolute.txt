@@ -38,3 +38,12 @@ C:\Users\p.codinachs.la.torre\Desktop\Interficie PC\P2\obj\Debug\P2.pdb
 C:\Users\p.codinachs.la.torre\Desktop\Interficie PC\P2\bin\Debug\P2.exe
 C:\Users\p.codinachs.la.torre\Desktop\Interficie PC\P2\bin\Debug\P2.pdb
 C:\Users\p.codinachs.la.torre\Desktop\Interficie PC\P2\obj\Debug\P2.ControlManual.resources
+\\Mac\Home\Desktop\TFG Interficies\Interficie PC\P2\bin\Debug\P2.exe
+\\Mac\Home\Desktop\TFG Interficies\Interficie PC\P2\bin\Debug\P2.pdb
+\\Mac\Home\Desktop\TFG Interficies\Interficie PC\P2\obj\Debug\P2.csprojAssemblyReference.cache
+\\Mac\Home\Desktop\TFG Interficies\Interficie PC\P2\obj\Debug\P2.Properties.Resources.resources
+\\Mac\Home\Desktop\TFG Interficies\Interficie PC\P2\obj\Debug\P2.ControlManual.resources
+\\Mac\Home\Desktop\TFG Interficies\Interficie PC\P2\obj\Debug\P2.csproj.GenerateResource.cache
+\\Mac\Home\Desktop\TFG Interficies\Interficie PC\P2\obj\Debug\P2.csproj.CoreCompileInputs.cache
+\\Mac\Home\Desktop\TFG Interficies\Interficie PC\P2\obj\Debug\P2.exe
+\\Mac\Home\Desktop\TFG Interficies\Interficie PC\P2\obj\Debug\P2.pdb

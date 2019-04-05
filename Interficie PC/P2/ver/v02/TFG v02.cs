@@ -95,7 +95,7 @@ namespace P2
                     namesListB.AddRange(namesArrayB);
                     namesListB.Reverse();
                     //label21.Text = Convert.ToString(namesArrayB[0] + "," + namesArrayB[1] + "," + namesArrayB[2] + "," + namesArrayB[3]);
-                    label20.Text = Convert.ToString(namesListB[1]); //Sensor
+                    label20.Text = Convert.ToString(namesListB[3]); //Sensor
                     label18.Text = Convert.ToString(namesListB[2]); //Encoder
                     int velocitatB = Convert.ToInt16(namesListB[1]);
                     if (velocitatB > 100)
@@ -374,7 +374,7 @@ namespace P2
             }
         }
 
-        private void textBox3_TextChanged(object sender, EventArgs e)
+        public void textBox3_TextChanged(object sender, EventArgs e)
         {
             motor = 3;
             try
@@ -412,6 +412,7 @@ namespace P2
             else if (e.KeyCode == Keys.Left) {
                 motor = 1;
                 moviment = 2;
+                inputVelocitatA = Convert.ToDouble(textBox1.Text);
                 enviarDades(motor, moviment, inputVelocitatA);
             }
         }
@@ -422,13 +423,14 @@ namespace P2
             {
                 motor = 2;
                 moviment = 3;
-                enviarDades(motor, moviment, inputVelocitatA);
+                inputVelocitatA = Convert.ToDouble(textBox2.Text);
+                enviarDades(motor, moviment, inputVelocitatB);
             }
             else if (e.KeyCode == Keys.Down)
             {
                 motor = 2;
                 moviment = 2;
-                enviarDades(motor, moviment, inputVelocitatA);
+                enviarDades(motor, moviment, inputVelocitatB);
             }
         }
 
