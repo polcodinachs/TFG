@@ -65,11 +65,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="ver\v02\Control manual v02.cs">
+    <Compile Include="ver\v02\Control manual v03.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ver\v02\Control manual v02.Designer.cs">
-      <DependentUpon>Control manual v02.cs</DependentUpon>
+    <Compile Include="ver\v02\Control manual v03.Designer.cs">
+      <DependentUpon>Control manual v03.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ver\v02\Disseny v02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ver\v02\Disseny v02.Designer.cs">
+      <DependentUpon>Disseny v02.cs</DependentUpon>
     </Compile>
     <Compile Include="ver\v02\Inici.cs">
       <SubType>Form</SubType>
@@ -83,8 +89,11 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="ver\v02\Control manual v02.resx">
-      <DependentUpon>Control manual v02.cs</DependentUpon>
+    <EmbeddedResource Include="ver\v02\Control manual v03.resx">
+      <DependentUpon>Control manual v03.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ver\v02\Disseny v02.resx">
+      <DependentUpon>Disseny v02.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ver\v02\Inici.resx">
       <DependentUpon>Inici.cs</DependentUpon>

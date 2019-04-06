@@ -51,3 +51,4 @@ C:\Users\p.codinachs.la.torre\Desktop\Interficie PC\P2\obj\Debug\P2.ControlManua
 \\Mac\Home\Desktop\TFG Interficies\Interficie PC\P2\bin\Debug\MetroFramework.dll
 \\Mac\Home\Desktop\TFG Interficies\Interficie PC\P2\bin\Debug\MetroFramework.Fonts.dll
 \\Mac\Home\Desktop\TFG Interficies\Interficie PC\P2\obj\Debug\P2.csproj.CopyComplete
+\\Mac\Home\Desktop\TFG Interficies\Interficie PC\P2\obj\Debug\TFG.Disseny.resources
