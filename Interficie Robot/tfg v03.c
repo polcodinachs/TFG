@@ -126,39 +126,42 @@ task main()
 			encoder[2] = getMotorEncoder(motorB);
 		}
 
-		//MOVIMENTS MANUALS A
+		//MOVIMENTS MANUALS
 		if(respuestaI2C[0] == 1){
-			switch(respuestaI2C[1]){
+			if(respuestaI2C[1] == 1){
+			switch(respuestaI2C[2]){
 			case 1:
 				posicioInicialA();
 				break;
 			case 2:
-					motor[motorA] = respuestaI2C[2];
+					motor[motorA] = respuestaI2C[3];
 					break;
 			case 3:
-				motor[motorA] = -respuestaI2C[2];
+				motor[motorA] = -respuestaI2C[3];
 				break;
 			case 4:
 				stopMotor(motorA);
 				break;
 			}
 			//MOVIMENTS MANUALS B
-		} else if(respuestaI2C[0] == 2){
-			switch(respuestaI2C[1]){
+		} else if(respuestaI2C[1] == 2){
+			switch(respuestaI2C[2]){
 			case 1:
 				posicioInicialB();
 				break;
 			case 2:
-					motor[motorB] = respuestaI2C[2];
+					motor[motorB] = respuestaI2C[3];
 					break;
 			case 3:
-				motor[motorB] = -respuestaI2C[2];
+				motor[motorB] = -respuestaI2C[3];
 				break;
 			case 4:
 				stopMotor(motorB);
 				break;
 			}
 		}
+	}
+
 
 		//SEGURETAT MOTOR A
 		if(encoder[1] >= 7400){
