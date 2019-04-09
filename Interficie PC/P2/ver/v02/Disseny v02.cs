@@ -26,9 +26,9 @@ namespace TFG
 
         }
 
-        private void button14_Click(object sender, EventArgs e)
+        public void button14_Click(object sender, EventArgs e)
         {
-            ControlManual controlmanual = new ControlManual();
+            ControlManual controlmanual = new ControlManual(Convert.ToString(listBox1.SelectedIndex));
             controlmanual.ShowDialog();
             Close();
         }
@@ -51,6 +51,11 @@ namespace TFG
         public void groupBox2_Enter(object sender, EventArgs e)
         {
             
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ControlManual controlmanual = new ControlManual(Convert.ToString(listBox1.SelectedIndex));
         }
     }
 }

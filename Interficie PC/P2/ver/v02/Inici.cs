@@ -32,7 +32,7 @@ namespace TFG
 
         private void button14_Click(object sender, EventArgs e)
         {
-            ControlManual controlmanual = new ControlManual();
+            ControlManual controlmanual = new ControlManual("");
             controlmanual.ShowDialog();
             Close();
         }

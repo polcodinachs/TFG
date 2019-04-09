@@ -110,6 +110,8 @@ namespace P2
             this.button13 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.label35 = new System.Windows.Forms.Label();
+            this.button17 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -851,6 +853,25 @@ namespace P2
             this.panel6.Size = new System.Drawing.Size(2150, 100);
             this.panel6.TabIndex = 55;
             // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(542, 166);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(82, 25);
+            this.label35.TabIndex = 56;
+            this.label35.Text = "label35";
+            // 
+            // button17
+            // 
+            this.button17.Location = new System.Drawing.Point(531, 206);
+            this.button17.Name = "button17";
+            this.button17.Size = new System.Drawing.Size(107, 44);
+            this.button17.TabIndex = 57;
+            this.button17.Text = "button17";
+            this.button17.UseVisualStyleBackColor = true;
+            this.button17.Click += new System.EventHandler(this.button17_Click);
+            // 
             // ControlManual
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -859,6 +880,8 @@ namespace P2
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(55)))));
             this.CancelButton = this.button1;
             this.ClientSize = new System.Drawing.Size(2564, 1439);
+            this.Controls.Add(this.button17);
+            this.Controls.Add(this.label35);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -991,5 +1014,7 @@ namespace P2
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button button16;
         private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.Button button17;
     }
 }

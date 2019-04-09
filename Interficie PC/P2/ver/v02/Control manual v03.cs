@@ -9,8 +9,9 @@ namespace P2
 {
     public partial class ControlManual : Form
     {
-        public string dato_reciv;
 
+        public string dato_reciv;
+   
         public string[] numeroMotor;
 
         public string[] namesArrayA;
@@ -28,9 +29,13 @@ namespace P2
         public double inputVelocitatC = 0;
         public string dadesEnviar;
 
-        public ControlManual()
+        public ControlManual(string traspas)
         {
             InitializeComponent();
+
+            label35.Text = traspas;
+
+
             WindowState = FormWindowState.Maximized;
             //this.ShowInTaskbar = false;
             checkBox1.Checked = true;
@@ -41,7 +46,6 @@ namespace P2
             }
 
             textBox4.KeyDown += TextBox4_KeyDown;
-
         }
 
         void MainFormFormClosing(object sender, FormClosingEventArgs e)
@@ -434,16 +438,25 @@ namespace P2
             }
         }
 
-
+        private void button17_Click(object sender, EventArgs e)
+        {
+            label35.Text = "";
+        }
 
         public void enviarDades(int motor, int moviment, double velocitat)
         {
             try
             {
-                dadesEnviar = 1 + "," + motor + "," + moviment + "," + velocitat;
-                label13.Text = dadesEnviar;
-                serialPort1.Write(dadesEnviar);
-                serialPort1.Write("\n");
+                if (label35.Text == "")
+                {
+                    dadesEnviar = 1 + "," + motor + "," + moviment + "," + velocitat;
+                    label13.Text = dadesEnviar;
+                    serialPort1.Write(dadesEnviar);
+                    serialPort1.Write("\n");
+                }
+                else if (label35.Text != "") {
+                    dadesEnviar = 2 + "," + label35.Text;
+                }   
             }
             catch
             {
