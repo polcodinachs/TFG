@@ -126,9 +126,9 @@ task main()
 			encoder[2] = getMotorEncoder(motorB);
 		}
 
-		//MOVIMENTS MANUALS
-		if(respuestaI2C[0] == 1){
-			if(respuestaI2C[1] == 1){
+
+		if(respuestaI2C[0] == 1){ //MOVIMENTS MANUALS
+			if(respuestaI2C[1] == 1){ //MOTOR A
 			switch(respuestaI2C[2]){
 			case 1:
 				posicioInicialA();
@@ -143,8 +143,7 @@ task main()
 				stopMotor(motorA);
 				break;
 			}
-			//MOVIMENTS MANUALS B
-		} else if(respuestaI2C[1] == 2){
+		} else if(respuestaI2C[1] == 2){ //MOTOR B
 			switch(respuestaI2C[2]){
 			case 1:
 				posicioInicialB();
@@ -160,6 +159,8 @@ task main()
 				break;
 			}
 		}
+	} else if (respuestaI2C[0] == 2) { //DISSENY DE FIGURES
+		setMotorTarget(motorA, 2000, 20);
 	}
 
 
@@ -182,7 +183,6 @@ task main()
 				stopMotor(motorB);
 			}
 		}
-
 		wait1Msec(100);
 	}
 }
