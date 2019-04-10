@@ -132,8 +132,7 @@ String getValue(String data, char separator, int index)
 
 void requestEvent()
 { 
-  int menu = ((x.substring(0,1)).toInt());
-  if(menu == 1) {
+    int menu = ((x.substring(0,1)).toInt());
     int motor = ((x.substring(2,3)).toInt());
     int moviment = ((x.substring(4,5)).toInt());
     int velocitat = ((x.substring(6,8)).toInt());
@@ -141,7 +140,4 @@ void requestEvent()
     Wire.write(motor);
     Wire.write(moviment);
     Wire.write(velocitat);
-  } else if(menu == 2) {
-    
-  }  
 }
