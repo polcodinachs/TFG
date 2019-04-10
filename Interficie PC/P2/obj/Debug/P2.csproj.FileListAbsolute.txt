@@ -48,7 +48,7 @@ C:\Users\p.codinachs.la.torre\Desktop\Interficie PC\P2\obj\Debug\P2.ControlManua
 \\Mac\Home\Desktop\TFG Interficies\Interficie PC\P2\obj\Debug\TFG.exe
 \\Mac\Home\Desktop\TFG Interficies\Interficie PC\P2\obj\Debug\TFG.pdb
 \\Mac\Home\Desktop\TFG Interficies\Interficie PC\P2\obj\Debug\TFG.Inici.resources
-\\Mac\Home\Desktop\TFG Interficies\Interficie PC\P2\bin\Debug\MetroFramework.dll
-\\Mac\Home\Desktop\TFG Interficies\Interficie PC\P2\bin\Debug\MetroFramework.Fonts.dll
-\\Mac\Home\Desktop\TFG Interficies\Interficie PC\P2\obj\Debug\P2.csproj.CopyComplete
 \\Mac\Home\Desktop\TFG Interficies\Interficie PC\P2\obj\Debug\TFG.Disseny.resources
+C:\Users\p.codinachs.la.torre\Desktop\TFG-develop\Interficie PC\P2\obj\Debug\P2.csprojAssemblyReference.cache
+C:\Users\p.codinachs.la.torre\Desktop\TFG-develop\Interficie PC\P2\obj\Debug\TFG.exe
+C:\Users\p.codinachs.la.torre\Desktop\TFG-develop\Interficie PC\P2\obj\Debug\TFG.pdb

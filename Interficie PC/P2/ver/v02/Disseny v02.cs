@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.IO.Ports;
 
 namespace TFG
 {
@@ -15,6 +16,14 @@ namespace TFG
         public Disseny()
         {
             InitializeComponent();
+
+            SerialPortClass.serialPort1.Close();
+
+            if (SerialPortClass.serialPort1.IsOpen == false) {
+                SerialPortClass.serialPort1.Open();
+            }
+            //SerialPortClass.serialPort1.DataReceived += port_DataReceived;
+
             WindowState = FormWindowState.Maximized;
             this.ShowInTaskbar = false;
             groupBox2.Visible = false;
@@ -26,9 +35,11 @@ namespace TFG
 
         }
 
+
+
         public void button14_Click(object sender, EventArgs e)
         {
-            ControlManual controlmanual = new ControlManual(Convert.ToString(listBox1.SelectedIndex));
+            ControlManual controlmanual = new ControlManual();
             controlmanual.ShowDialog();
             Close();
         }
@@ -55,7 +66,22 @@ namespace TFG
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ControlManual controlmanual = new ControlManual(Convert.ToString(listBox1.SelectedIndex));
+            int formulariDisseny = 2;
+            int figura = listBox1.SelectedIndex;
+            string dadesEnviar = Convert.ToString(formulariDisseny + "," + figura);
+
+            if (!SerialPortClass.serialPort1.IsOpen) {
+                SerialPortClass.serialPort1.Open();
+            }
+            SerialPortClass.serialPort1.Write(dadesEnviar);
+
+            label6.Text = dadesEnviar;
+        }
+        
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

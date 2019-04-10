@@ -11,7 +11,7 @@ namespace P2
     {
 
         public string dato_reciv;
-   
+
         public string[] numeroMotor;
 
         public string[] namesArrayA;
@@ -22,19 +22,20 @@ namespace P2
         public List<string> namesListC;
 
         public int motor;
-
         public int moviment = 0;
         public double inputVelocitatA = 0;
         public double inputVelocitatB = 0;
         public double inputVelocitatC = 0;
         public string dadesEnviar;
+        
+    
+        public string[] colorsBotons;
 
-        public ControlManual(string traspas)
+        public ControlManual(string traspas, int deDisseny)
         {
             InitializeComponent();
 
             label35.Text = traspas;
-
 
             WindowState = FormWindowState.Maximized;
             //this.ShowInTaskbar = false;
@@ -48,11 +49,11 @@ namespace P2
             textBox4.KeyDown += TextBox4_KeyDown;
         }
 
-        void MainFormFormClosing(object sender, FormClosingEventArgs e)
-        {
-            serialPort1.Close();
-        }
-
+        //void MainFormFormClosing(object sender, FormClosingEventArgs e)
+        //{
+         //   serialPort1.Close();
+        //}
+            
         void ComboBox1SelectedIndexChanged(object sender, EventArgs e)
         {
             serialPort1.PortName = comboBox1.Text;
@@ -75,6 +76,8 @@ namespace P2
             dato_reciv = serialPort1.ReadLine();
             numeroMotor = dato_reciv.Split(',');
 
+            label4.Text = dato_reciv;
+
             label22.Text = numeroMotor[0];
 
             switch (numeroMotor[0]) {
@@ -84,7 +87,7 @@ namespace P2
                     namesListA.AddRange(namesArrayA);
                     namesListA.Reverse();
                     label2.Text = Convert.ToString(namesArrayA[0] + "," + namesArrayA[1] + "," + namesArrayA[2] + "," + namesArrayA[3]);
-                    label4.Text = Convert.ToString(namesListA[3]); //Sensor
+                    SensorMotorA.Text = Convert.ToString(namesListA[3]); //Sensor
                     label6.Text = Convert.ToString(namesListA[2]); //Encoder
                     int velocitatA = Convert.ToInt16(namesListA[1]);
                     if (velocitatA > 100) {
@@ -216,7 +219,7 @@ namespace P2
             {
                 label12.Text = "Introdueix un valor vàlid";
             }
-            
+
         }
 
 
@@ -456,7 +459,7 @@ namespace P2
                 }
                 else if (label35.Text != "") {
                     dadesEnviar = 2 + "," + label35.Text;
-                }   
+                }
             }
             catch
             {
@@ -474,8 +477,19 @@ namespace P2
         private void button15_Click(object sender, EventArgs e)
         {
             Disseny disseny = new Disseny();
+            serialPort1.Close();
             disseny.ShowDialog();
             Close();
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ControlManual_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

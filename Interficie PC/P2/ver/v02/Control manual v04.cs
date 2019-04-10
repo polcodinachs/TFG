@@ -9,6 +9,7 @@ namespace P2
 {
     public partial class ControlManual : Form
     {
+
         public string dato_reciv;
 
         public string[] numeroMotor;
@@ -21,105 +22,136 @@ namespace P2
         public List<string> namesListC;
 
         public int motor;
-
         public int moviment = 0;
         public double inputVelocitatA = 0;
         public double inputVelocitatB = 0;
         public double inputVelocitatC = 0;
         public string dadesEnviar;
+        
+    
+        public string[] colorsBotons;
+
 
         public ControlManual()
         {
             InitializeComponent();
+
+            SerialPortClass.serialPort1.Close();
+            SerialPortClass.serialPort1.Open();
+
+            if (SerialPortClass.serialPort1.IsOpen == true)
+            {
+                label1.Text = "Connectat";
+            }
+            else
+            {
+                try
+                {
+                    SerialPortClass.serialPort1.Open();
+                }
+                catch
+                {
+                    MessageBox.Show("No s'ha pogut conectar");
+                }
+            }
+            
+            SerialPortClass.serialPort1.DataReceived += port_DataReceived;
+
+
             WindowState = FormWindowState.Maximized;
             //this.ShowInTaskbar = false;
             checkBox1.Checked = true;
             Control.CheckForIllegalCrossThreadCalls = false;
-            foreach (string s in SerialPort.GetPortNames())
-            {
-                comboBox1.Items.Add(s);
-            }
+            //foreach (string s in SerialPort.GetPortNames())
+            //{
+            //    comboBox1.Items.Add(s);
+            //}
 
             textBox4.KeyDown += TextBox4_KeyDown;
-
         }
 
         void MainFormFormClosing(object sender, FormClosingEventArgs e)
         {
-            serialPort1.Close();
+            SerialPortClass.serialPort1.Close();
         }
-
-        void ComboBox1SelectedIndexChanged(object sender, EventArgs e)
-        {
-            serialPort1.PortName = comboBox1.Text;
-            try
-            {
-                serialPort1.Open();
-            }
-            catch
-            {
-                MessageBox.Show("Puerto no válido");
-                return;
-            }
-            comboBox1.Enabled = false;
-        }
+            
+        //void ComboBox1SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    SerialPortClass.serialPort1.PortName = comboBox1.Text;
+        //    try
+        //    {
+        //        SerialPortClass.serialPort1.Open();
+        //    }
+        //    catch
+        //    {
+        //        MessageBox.Show("Puerto no válido");
+        //        return;
+        //    }
+        //    comboBox1.Enabled = false;
+        //}
 
         //LECTURA I INTERPRETACIO DE DADES
-        public void SerialPort1DataReceived(object sender, System.IO.Ports.SerialDataReceivedEventArgs e)
+        public void port_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
 
-            dato_reciv = serialPort1.ReadLine();
+            dato_reciv = SerialPortClass.serialPort1.ReadLine();
+
             numeroMotor = dato_reciv.Split(',');
+
+            label4.Text = dato_reciv;
 
             label22.Text = numeroMotor[0];
 
-            switch (numeroMotor[0]) {
-                case "1":
-                    namesArrayA = numeroMotor;
-                    namesListA = new List<string>(namesArrayA.Length);
-                    namesListA.AddRange(namesArrayA);
-                    namesListA.Reverse();
-                    label2.Text = Convert.ToString(namesArrayA[0] + "," + namesArrayA[1] + "," + namesArrayA[2] + "," + namesArrayA[3]);
-                    label4.Text = Convert.ToString(namesListA[3]); //Sensor
-                    label6.Text = Convert.ToString(namesListA[2]); //Encoder
-                    int velocitatA = Convert.ToInt16(namesListA[1]);
-                    if (velocitatA > 100) {
-                        velocitatA = velocitatA - 256;
-                    }
-                    label8.Text = Convert.ToString(velocitatA);
-                    break;
+            if (numeroMotor.Length == 5) {
+                switch (numeroMotor[0])
+                {
+                    case "1":
+                        namesArrayA = numeroMotor;
+                        namesListA = new List<string>(namesArrayA.Length);
+                        namesListA.AddRange(namesArrayA);
+                        namesListA.Reverse();
+                        label2.Text = Convert.ToString(namesArrayA[0] + "," + namesArrayA[1] + "," + namesArrayA[2] + "," + namesArrayA[3]);
+                        SensorMotorA.Text = Convert.ToString(namesListA[3]); //Sensor
+                        label6.Text = Convert.ToString(namesListA[2]); //Encoder
+                        int velocitatA = Convert.ToInt16(namesListA[1]);
+                        if (velocitatA > 100)
+                        {
+                            velocitatA = velocitatA - 256;
+                        }
+                        label8.Text = Convert.ToString(velocitatA);
+                        break;
 
-                case "2":
-                    namesArrayB = numeroMotor;
-                    namesListB = new List<string>(namesArrayB.Length);
-                    namesListB.AddRange(namesArrayB);
-                    namesListB.Reverse();
-                    //label21.Text = Convert.ToString(namesArrayB[0] + "," + namesArrayB[1] + "," + namesArrayB[2] + "," + namesArrayB[3]);
-                    label20.Text = Convert.ToString(namesListB[3]); //Sensor
-                    label18.Text = Convert.ToString(namesListB[2]); //Encoder
-                    int velocitatB = Convert.ToInt16(namesListB[1]);
-                    if (velocitatB > 100)
-                    {
-                        velocitatB = velocitatB - 256;
-                    }
-                    label16.Text = Convert.ToString(velocitatB);
-                    break;
+                    case "2":
+                        namesArrayB = numeroMotor;
+                        namesListB = new List<string>(namesArrayB.Length);
+                        namesListB.AddRange(namesArrayB);
+                        namesListB.Reverse();
+                        //label21.Text = Convert.ToString(namesArrayB[0] + "," + namesArrayB[1] + "," + namesArrayB[2] + "," + namesArrayB[3]);
+                        label20.Text = Convert.ToString(namesListB[3]); //Sensor
+                        label18.Text = Convert.ToString(namesListB[2]); //Encoder
+                        int velocitatB = Convert.ToInt16(namesListB[1]);
+                        if (velocitatB > 100)
+                        {
+                            velocitatB = velocitatB - 256;
+                        }
+                        label16.Text = Convert.ToString(velocitatB);
+                        break;
 
-                case "3":
-                    namesArrayC = numeroMotor;
-                    namesListC = new List<string>(namesArrayC.Length);
-                    namesListC.AddRange(namesArrayC);
-                    namesListC.Reverse();
-                    //label31.Text = Convert.ToString(namesArrayC[0] + "," + namesArrayC[1] + "," + namesArrayC[2] + "," + namesArrayC[3]);
-                    int velocitatC = Convert.ToInt16(namesListC[1]);
-                    if (velocitatC > 100)
-                    {
-                        velocitatC = velocitatC - 256;
-                    }
-                    label26.Text = Convert.ToString(velocitatC);
-                    break;
-            }
-
+                    case "3":
+                        namesArrayC = numeroMotor;
+                        namesListC = new List<string>(namesArrayC.Length);
+                        namesListC.AddRange(namesArrayC);
+                        namesListC.Reverse();
+                        //label31.Text = Convert.ToString(namesArrayC[0] + "," + namesArrayC[1] + "," + namesArrayC[2] + "," + namesArrayC[3]);
+                        int velocitatC = Convert.ToInt16(namesListC[1]);
+                        if (velocitatC > 100)
+                        {
+                            velocitatC = velocitatC - 256;
+                        }
+                        label26.Text = Convert.ToString(velocitatC);
+                        break;
+                }
+            } 
         }
 
         //MOTOR A
@@ -212,7 +244,7 @@ namespace P2
             {
                 label12.Text = "Introdueix un valor vàlid";
             }
-            
+
         }
 
 
@@ -434,16 +466,20 @@ namespace P2
             }
         }
 
-
+        private void button17_Click(object sender, EventArgs e)
+        {
+            label35.Text = "";
+        }
 
         public void enviarDades(int motor, int moviment, double velocitat)
         {
             try
             {
+                
                 dadesEnviar = 1 + "," + motor + "," + moviment + "," + velocitat;
                 label13.Text = dadesEnviar;
-                serialPort1.Write(dadesEnviar);
-                serialPort1.Write("\n");
+                SerialPortClass.serialPort1.Write(dadesEnviar);
+                SerialPortClass.serialPort1.Write("\n");
             }
             catch
             {
@@ -461,8 +497,19 @@ namespace P2
         private void button15_Click(object sender, EventArgs e)
         {
             Disseny disseny = new Disseny();
-            disseny.ShowDialog();
+            SerialPortClass.serialPort1.Close();
             Close();
+            disseny.ShowDialog();
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ControlManual_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

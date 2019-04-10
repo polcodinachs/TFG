@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Disseny));
             this.panel1 = new System.Windows.Forms.Panel();
             this.button16 = new System.Windows.Forms.Button();
@@ -40,6 +39,7 @@
             this.button13 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -52,8 +52,7 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
+            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -159,6 +158,7 @@
             this.button13.Text = "Home";
             this.button13.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.button13.UseVisualStyleBackColor = true;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
             // panel2
             // 
@@ -181,6 +181,16 @@
             this.groupBox1.TabIndex = 55;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Forma";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(709, 254);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(178, 68);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Enviar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // listBox1
             // 
@@ -299,15 +309,14 @@
             this.label5.Size = new System.Drawing.Size(0, 53);
             this.label5.TabIndex = 0;
             // 
-            // button1
+            // label6
             // 
-            this.button1.Location = new System.Drawing.Point(709, 254);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(178, 68);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Enviar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(559, 211);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(70, 25);
+            this.label6.TabIndex = 59;
+            this.label6.Text = "label6";
             // 
             // Disseny
             // 
@@ -315,6 +324,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(55)))));
             this.ClientSize = new System.Drawing.Size(2473, 1412);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox2);
@@ -360,6 +370,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button1;
-        private System.IO.Ports.SerialPort serialPort1;
+        private System.Windows.Forms.Label label6;
     }
 }
