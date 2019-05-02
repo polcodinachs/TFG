@@ -1,19 +1,18 @@
 ﻿using System;
 using System.Windows.Forms;
-using System.IO.Ports;
-using TFG;
+using TFG.ver.v02;
 
-namespace P2
+namespace TFG
 {
 
-	internal sealed class Program
+    internal sealed class Program
 	{
         [STAThread]
         private static void Main(string[] args)
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Inici());
+            Application.Run(new Principal());
         }
 	}
 }

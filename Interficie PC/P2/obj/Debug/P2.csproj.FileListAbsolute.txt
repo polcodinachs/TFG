@@ -30,16 +30,9 @@ D:/6è Quadrimestre/SICIEIA/Pràctica 2/P2/P2/obj/Debug/P2.pdb
 \\Mac\Home\Desktop\P2\P2\obj\Debug\P2.pdb
 \\Mac\Home\Desktop\P2\P2\obj\Debug\P2.Properties.Resources.resources
 C:\Users\p.codinachs.la.torre\Desktop\Interficie PC\P2\obj\Debug\P2.csprojAssemblyReference.cache
-C:\Users\p.codinachs.la.torre\Desktop\Interficie PC\P2\obj\Debug\P2.Properties.Resources.resources
 C:\Users\p.codinachs.la.torre\Desktop\Interficie PC\P2\obj\Debug\P2.csproj.GenerateResource.cache
 C:\Users\p.codinachs.la.torre\Desktop\Interficie PC\P2\obj\Debug\P2.csproj.CoreCompileInputs.cache
-C:\Users\p.codinachs.la.torre\Desktop\Interficie PC\P2\obj\Debug\P2.exe
-C:\Users\p.codinachs.la.torre\Desktop\Interficie PC\P2\obj\Debug\P2.pdb
-C:\Users\p.codinachs.la.torre\Desktop\Interficie PC\P2\bin\Debug\P2.exe
-C:\Users\p.codinachs.la.torre\Desktop\Interficie PC\P2\bin\Debug\P2.pdb
-C:\Users\p.codinachs.la.torre\Desktop\Interficie PC\P2\obj\Debug\P2.ControlManual.resources
 \\Mac\Home\Desktop\TFG Interficies\Interficie PC\P2\obj\Debug\P2.csprojAssemblyReference.cache
-\\Mac\Home\Desktop\TFG Interficies\Interficie PC\P2\obj\Debug\P2.ControlManual.resources
 \\Mac\Home\Desktop\TFG Interficies\Interficie PC\P2\obj\Debug\P2.csproj.GenerateResource.cache
 \\Mac\Home\Desktop\TFG Interficies\Interficie PC\P2\obj\Debug\P2.csproj.CoreCompileInputs.cache
 \\Mac\Home\Desktop\TFG Interficies\Interficie PC\P2\bin\Debug\TFG.exe
@@ -47,8 +40,54 @@ C:\Users\p.codinachs.la.torre\Desktop\Interficie PC\P2\obj\Debug\P2.ControlManua
 \\Mac\Home\Desktop\TFG Interficies\Interficie PC\P2\obj\Debug\TFG.Properties.Resources.resources
 \\Mac\Home\Desktop\TFG Interficies\Interficie PC\P2\obj\Debug\TFG.exe
 \\Mac\Home\Desktop\TFG Interficies\Interficie PC\P2\obj\Debug\TFG.pdb
-\\Mac\Home\Desktop\TFG Interficies\Interficie PC\P2\obj\Debug\TFG.Inici.resources
 \\Mac\Home\Desktop\TFG Interficies\Interficie PC\P2\obj\Debug\TFG.Disseny.resources
 C:\Users\p.codinachs.la.torre\Desktop\TFG-develop\Interficie PC\P2\obj\Debug\P2.csprojAssemblyReference.cache
 C:\Users\p.codinachs.la.torre\Desktop\TFG-develop\Interficie PC\P2\obj\Debug\TFG.exe
 C:\Users\p.codinachs.la.torre\Desktop\TFG-develop\Interficie PC\P2\obj\Debug\TFG.pdb
+C:\Users\p.codinachs.la.torre\Desktop\Interficie PC\P2\obj\Debug\TFG.exe
+C:\Users\p.codinachs.la.torre\Desktop\Interficie PC\P2\obj\Debug\TFG.pdb
+C:\Users\p.codinachs.la.torre\Desktop\Interficie PC\P2\bin\Debug\TFG.exe
+C:\Users\p.codinachs.la.torre\Desktop\Interficie PC\P2\bin\Debug\TFG.pdb
+C:\Users\p.codinachs.la.torre\Desktop\Interficie PC\P2\obj\Debug\TFG.Properties.Resources.resources
+C:\Users\p.codinachs.la.torre\Desktop\Interficie PC\P2\obj\Debug\TFG.ControlManual.resources
+C:\Users\p.codinachs.la.torre\Desktop\Interficie PC\P2\obj\Debug\TFG.Disseny.resources
+C:\Users\p.codinachs.la.torre\Desktop\Interficie PC\P2\obj\Debug\TFG.ver.v02.Principal.resources
+\\Mac\Home\Desktop\Interficie PC-parents\P2\bin\Debug\TFG.exe
+\\Mac\Home\Desktop\Interficie PC-parents\P2\bin\Debug\TFG.pdb
+\\Mac\Home\Desktop\Interficie PC-parents\P2\obj\Debug\P2.csprojAssemblyReference.cache
+\\Mac\Home\Desktop\Interficie PC-parents\P2\obj\Debug\TFG.Properties.Resources.resources
+\\Mac\Home\Desktop\Interficie PC-parents\P2\obj\Debug\TFG.ControlManual.resources
+\\Mac\Home\Desktop\Interficie PC-parents\P2\obj\Debug\TFG.Disseny.resources
+\\Mac\Home\Desktop\Interficie PC-parents\P2\obj\Debug\TFG.ver.v02.Principal.resources
+\\Mac\Home\Desktop\Interficie PC-parents\P2\obj\Debug\P2.csproj.GenerateResource.cache
+\\Mac\Home\Desktop\Interficie PC-parents\P2\obj\Debug\P2.csproj.CoreCompileInputs.cache
+\\Mac\Home\Desktop\Interficie PC-parents\P2\obj\Debug\TFG.exe
+\\Mac\Home\Desktop\Interficie PC-parents\P2\obj\Debug\TFG.pdb
+\\Mac\Home\Desktop\Interficie PC-parents\P2\obj\Debug\TFG.ver.v02.canvas.resources
+C:\Users\p.codinachs.la.torre\Downloads\ggg\ggg\Interficie PC-parents co╠Çpia\P2\obj\Debug\P2.csprojAssemblyReference.cache
+C:\Users\p.codinachs.la.torre\Downloads\ggg\ggg\Interficie PC-parents co╠Çpia\P2\obj\Debug\TFG.exe
+C:\Users\p.codinachs.la.torre\Downloads\ggg\ggg\Interficie PC-parents co╠Çpia\P2\obj\Debug\TFG.pdb
+C:\Users\p.codinachs.la.torre\Downloads\ggg\ggg\Interficie PC-parents co╠Çpia\P2\bin\Debug\TFG.exe
+C:\Users\p.codinachs.la.torre\Downloads\ggg\ggg\Interficie PC-parents co╠Çpia\P2\bin\Debug\TFG.pdb
+C:\Users\p.codinachs.la.torre\Downloads\ggg\ggg\Interficie PC-parents co╠Çpia\P2\obj\Debug\TFG.Properties.Resources.resources
+C:\Users\p.codinachs.la.torre\Downloads\ggg\ggg\Interficie PC-parents co╠Çpia\P2\obj\Debug\TFG.ver.v02.canvas.resources
+C:\Users\p.codinachs.la.torre\Downloads\ggg\ggg\Interficie PC-parents co╠Çpia\P2\obj\Debug\TFG.ControlManual.resources
+C:\Users\p.codinachs.la.torre\Downloads\ggg\ggg\Interficie PC-parents co╠Çpia\P2\obj\Debug\TFG.Disseny.resources
+C:\Users\p.codinachs.la.torre\Downloads\ggg\ggg\Interficie PC-parents co╠Çpia\P2\obj\Debug\TFG.ver.v02.Principal.resources
+C:\Users\p.codinachs.la.torre\Downloads\ggg\ggg\Interficie PC-parents co╠Çpia\P2\obj\Debug\P2.csproj.GenerateResource.cache
+C:\Users\p.codinachs.la.torre\Downloads\ggg\ggg\Interficie PC-parents co╠Çpia\P2\obj\Debug\P2.csproj.CoreCompileInputs.cache
+\\Mac\Home\Desktop\Interficie PC-parents co╠Çpia\P2\bin\Debug\TFG.exe
+\\Mac\Home\Desktop\Interficie PC-parents co╠Çpia\P2\bin\Debug\TFG.pdb
+\\Mac\Home\Desktop\Interficie PC-parents co╠Çpia\P2\obj\Debug\P2.csprojAssemblyReference.cache
+\\Mac\Home\Desktop\Interficie PC-parents co╠Çpia\P2\obj\Debug\TFG.Properties.Resources.resources
+\\Mac\Home\Desktop\Interficie PC-parents co╠Çpia\P2\obj\Debug\TFG.ver.v02.canvas.resources
+\\Mac\Home\Desktop\Interficie PC-parents co╠Çpia\P2\obj\Debug\TFG.ControlManual.resources
+\\Mac\Home\Desktop\Interficie PC-parents co╠Çpia\P2\obj\Debug\TFG.Disseny.resources
+\\Mac\Home\Desktop\Interficie PC-parents co╠Çpia\P2\obj\Debug\TFG.ver.v02.Principal.resources
+\\Mac\Home\Desktop\Interficie PC-parents co╠Çpia\P2\obj\Debug\P2.csproj.GenerateResource.cache
+\\Mac\Home\Desktop\Interficie PC-parents co╠Çpia\P2\obj\Debug\P2.csproj.CoreCompileInputs.cache
+\\Mac\Home\Desktop\Interficie PC-parents co╠Çpia\P2\obj\Debug\TFG.exe
+\\Mac\Home\Desktop\Interficie PC-parents co╠Çpia\P2\obj\Debug\TFG.pdb
+\\Mac\Home\Desktop\TFG Interficies\Interficie PC\P2\obj\Debug\TFG.ver.v02.canvas.resources
+\\Mac\Home\Desktop\TFG Interficies\Interficie PC\P2\obj\Debug\TFG.ControlManual.resources
+\\Mac\Home\Desktop\TFG Interficies\Interficie PC\P2\obj\Debug\TFG.ver.v02.Principal.resources

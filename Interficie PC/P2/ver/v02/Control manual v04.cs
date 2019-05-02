@@ -4,8 +4,9 @@ using System.Drawing;
 using System.Windows.Forms;
 using System.IO.Ports;
 using TFG;
+using TFG.ver.v02;
 
-namespace P2
+namespace TFG
 {
     public partial class ControlManual : Form
     {
@@ -36,30 +37,11 @@ namespace P2
         {
             InitializeComponent();
 
-            SerialPortClass.serialPort1.Close();
-            SerialPortClass.serialPort1.Open();
-
-            if (SerialPortClass.serialPort1.IsOpen == true)
-            {
-                label1.Text = "Connectat";
-            }
-            else
-            {
-                try
-                {
-                    SerialPortClass.serialPort1.Open();
-                }
-                catch
-                {
-                    MessageBox.Show("No s'ha pogut conectar");
-                }
-            }
-            
-            SerialPortClass.serialPort1.DataReceived += port_DataReceived;
-
+            Principal.SerialPortClass.serialPort1.Close();
+            Principal.SerialPortClass.serialPort1.Open();
+            Principal.SerialPortClass.serialPort1.DataReceived += port_DataReceived;
 
             WindowState = FormWindowState.Maximized;
-            //this.ShowInTaskbar = false;
             checkBox1.Checked = true;
             Control.CheckForIllegalCrossThreadCalls = false;
             //foreach (string s in SerialPort.GetPortNames())
@@ -72,7 +54,7 @@ namespace P2
 
         void MainFormFormClosing(object sender, FormClosingEventArgs e)
         {
-            SerialPortClass.serialPort1.Close();
+
         }
             
         //void ComboBox1SelectedIndexChanged(object sender, EventArgs e)
@@ -93,14 +75,20 @@ namespace P2
         //LECTURA I INTERPRETACIO DE DADES
         public void port_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
-
-            dato_reciv = SerialPortClass.serialPort1.ReadLine();
+            try
+            {
+                dato_reciv = Principal.SerialPortClass.serialPort1.ReadLine();
+            }
+            catch
+            {
+                MessageBox.Show("Torna-hi");
+            }
+           
 
             numeroMotor = dato_reciv.Split(',');
 
             label4.Text = dato_reciv;
 
-            label22.Text = numeroMotor[0];
 
             if (numeroMotor.Length == 5) {
                 switch (numeroMotor[0])
@@ -142,6 +130,8 @@ namespace P2
                         namesListC = new List<string>(namesArrayC.Length);
                         namesListC.AddRange(namesArrayC);
                         namesListC.Reverse();
+                        label30.Text = Convert.ToString(namesListC[3]); //Sensor
+                        label28.Text = Convert.ToString(namesListC[2]); //Encoder
                         //label31.Text = Convert.ToString(namesArrayC[0] + "," + namesArrayC[1] + "," + namesArrayC[2] + "," + namesArrayC[3]);
                         int velocitatC = Convert.ToInt16(namesListC[1]);
                         if (velocitatC > 100)
@@ -247,6 +237,21 @@ namespace P2
 
         }
 
+        private void trackBar1_Scroll_1(object sender, EventArgs e)
+        {
+            motor = 1;
+            try
+            {
+                inputVelocitatA = Convert.ToDouble(trackBar1.Value);
+                label12.Text = Convert.ToString(inputVelocitatA);
+                enviarDades(motor, moviment, inputVelocitatA);
+            }
+            catch
+            {
+                label12.Text = "Introdueix un valor vàlid";
+            }
+        }
+
 
         //MOTOR B
         private void button8_Click(object sender, EventArgs e)
@@ -313,18 +318,6 @@ namespace P2
             }
         }
 
-        private void checkBox2_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkBox2.Checked)
-            {
-                textBox2.Enabled = true;
-            }
-            else
-            {
-                textBox2.Enabled = false;
-            }
-        }
-
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
             motor = 2;
@@ -342,7 +335,7 @@ namespace P2
 
 
         //MOTOR C
-        private void button12_Click(object sender, EventArgs e)
+        private void button12_Click_1(object sender, EventArgs e)
         {
             moviment = 1; //Posicio inicial
             motor = 3; //Motor C
@@ -358,7 +351,7 @@ namespace P2
             }
         }
 
-        private void button11_Click(object sender, EventArgs e)
+        private void button11_Click_1(object sender, EventArgs e)
         {
             moviment = 2; //Endavant
             motor = 3; //Motor C
@@ -374,7 +367,7 @@ namespace P2
             }
         }
 
-        private void button10_Click(object sender, EventArgs e)
+        private void button10_Click_1(object sender, EventArgs e)
         {
             moviment = 3; //Endarrere
             motor = 3; //Motor C
@@ -390,7 +383,7 @@ namespace P2
             }
         }
 
-        private void button9_Click(object sender, EventArgs e)
+        private void button9_Click_1(object sender, EventArgs e)
         {
             moviment = 4; //STOP
             motor = 3; //Motor C
@@ -406,7 +399,7 @@ namespace P2
             }
         }
 
-        public void textBox3_TextChanged(object sender, EventArgs e)
+        public void textBox3_TextChanged_1(object sender, EventArgs e)
         {
             motor = 3;
             try
@@ -418,18 +411,6 @@ namespace P2
             catch
             {
                 label24.Text = "Introdueix un valor vàlid";
-            }
-        }
-
-        private void checkBox3_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkBox3.Checked)
-            {
-                textBox3.Enabled = true;
-            }
-            else
-            {
-                textBox3.Enabled = false;
             }
         }
 
@@ -468,7 +449,6 @@ namespace P2
 
         private void button17_Click(object sender, EventArgs e)
         {
-            label35.Text = "";
         }
 
         public void enviarDades(int motor, int moviment, double velocitat)
@@ -478,8 +458,8 @@ namespace P2
                 
                 dadesEnviar = 1 + "," + motor + "," + moviment + "," + velocitat;
                 label13.Text = dadesEnviar;
-                SerialPortClass.serialPort1.Write(dadesEnviar);
-                SerialPortClass.serialPort1.Write("\n");
+                Principal.SerialPortClass.serialPort1.Write(dadesEnviar);
+                Principal.SerialPortClass.serialPort1.Write("\n");
             }
             catch
             {
@@ -487,17 +467,9 @@ namespace P2
             }
         }
 
-        private void button13_Click_1(object sender, EventArgs e)
-        {
-            Inici inici = new Inici();
-            inici.ShowDialog();
-            Close();
-        }
-
         private void button15_Click(object sender, EventArgs e)
         {
             Disseny disseny = new Disseny();
-            SerialPortClass.serialPort1.Close();
             Close();
             disseny.ShowDialog();
         }

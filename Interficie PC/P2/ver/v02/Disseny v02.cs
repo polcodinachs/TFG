@@ -1,4 +1,4 @@
-﻿using P2;
+﻿using TFG;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,34 +8,21 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.IO.Ports;
+using TFG.ver.v02;
 
 namespace TFG
 {
     public partial class Disseny : Form
     {
+
+        public string dadesEnviar;
+
         public Disseny()
         {
             InitializeComponent();
-
-            SerialPortClass.serialPort1.Close();
-
-            if (SerialPortClass.serialPort1.IsOpen == false) {
-                SerialPortClass.serialPort1.Open();
-            }
-            //SerialPortClass.serialPort1.DataReceived += port_DataReceived;
-
-            WindowState = FormWindowState.Maximized;
-            this.ShowInTaskbar = false;
-            groupBox2.Visible = false;
-            groupBox3.Visible = false;
+            //Principal.SerialPortClass.serialPort1.DataReceived += port_DataReceived;
+            
         }
-
-        private void Disseny_Load(object sender, EventArgs e)
-        {
-
-        }
-
-
 
         public void button14_Click(object sender, EventArgs e)
         {
@@ -46,16 +33,17 @@ namespace TFG
 
         public void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            label1.Text = Convert.ToString(listBox1.SelectedIndex);
-            if (listBox1.SelectedIndex == 0)
-            {
-                groupBox2.Visible = true;
-                groupBox3.Visible = false;
-            }
-            else if (listBox1.SelectedIndex == 1)
-            {
-                groupBox2.Visible = false;
-                groupBox3.Visible = true;
+            label1.Text = Convert.ToString(listBox1.SelectedIndex+10);
+            enviarDades(listBox1.SelectedIndex+10);
+            switch (listBox1.SelectedIndex) {
+                case 0: //QUADRAT
+                    pictureBox1.Visible = true;
+                    pictureBox2.Visible = false;
+                    break;
+                case 1: //TRIANGLE
+                    pictureBox1.Visible = false;
+                    pictureBox2.Visible = true;
+                    break;
             }
         }
 
@@ -70,10 +58,7 @@ namespace TFG
             int figura = listBox1.SelectedIndex;
             string dadesEnviar = Convert.ToString(formulariDisseny + "," + figura);
 
-            if (!SerialPortClass.serialPort1.IsOpen) {
-                SerialPortClass.serialPort1.Open();
-            }
-            SerialPortClass.serialPort1.Write(dadesEnviar);
+  
 
             label6.Text = dadesEnviar;
         }
@@ -82,6 +67,26 @@ namespace TFG
         private void button13_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public void enviarDades(int figura)
+        {
+            try
+            {
+
+                dadesEnviar = 2 + "," + figura;
+                Principal.SerialPortClass.serialPort1.Write(dadesEnviar);
+                Principal.SerialPortClass.serialPort1.Write("\n");
+            }
+            catch
+            {
+                MessageBox.Show("No s'ha pogut enviar, revisa l'apartat de comunicacions");
+            }
         }
     }
 }
