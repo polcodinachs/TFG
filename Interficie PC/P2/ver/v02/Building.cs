@@ -59,10 +59,9 @@ namespace TFG.ver.v02
         private void button9_Click(object sender, EventArgs e)
         {
             Graphics gObject = CreateGraphics();
-            Graphics G = Graphics.FromImage(pictureBox1.Image);
             Pen grayPen = new Pen(Color.LightGray, 1);
             Pen redPen = new Pen(Color.Red, 3);
-            G.DrawRectangle(redPen, 10, 10, 500, 500);
+            gObject.DrawRectangle(redPen, 10, 10, 500, 500);
             for (int i = 1; i <= 50; i++)
             {
                 gObject.DrawLine(grayPen, 10, 10 * i, 510, 10 * i);
@@ -348,6 +347,11 @@ namespace TFG.ver.v02
             g.Dispose();
         }
 
+        private void canvas_Load(object sender, EventArgs e)
+        {
+
+        }
+
         //CERCLE
         private void button8_Click(object sender, EventArgs e)
         {
@@ -373,18 +377,18 @@ namespace TFG.ver.v02
 
                 if (sweepAngle == 90)
                 {
-                    puntX.Add(puntX[contadorPunts - 1] + radius / 2);
-                    puntY.Add(puntY[contadorPunts - 1] + radius / 2);
+                    puntX.Add((radius * Math.Sin(sweepAngle * Math.PI / 180)) + puntX[contadorPunts - 1]);
+                    puntY.Add((radius * Math.Cos(sweepAngle * Math.PI / 180)) + puntY[contadorPunts - 1] + radius);
                 }
                 else if (sweepAngle == -90)
                 {
-                    puntX.Add(puntX[contadorPunts - 1]);
-                    puntY.Add(puntY[contadorPunts - 1] + radius / 2);
+                    puntX.Add((radius * Math.Sin(sweepAngle * Math.PI / 180)) + puntX[contadorPunts - 1]);
+                    puntY.Add((radius * Math.Cos(sweepAngle * Math.PI / 180)) + puntY[contadorPunts - 1] + radius);
                 }
                 else if (sweepAngle != 90)
                 {
                     puntX.Add((radius * Math.Sin(sweepAngle * Math.PI / 180)) + puntX[contadorPunts - 1]);
-                    puntY.Add((radius * Math.Sin(sweepAngle * Math.PI / 180)) + radius / 2);
+                    puntY.Add((radius * Math.Cos((-sweepAngle) * Math.PI / 180)));
                 }
 
             } else if (radioButton2.Checked) {

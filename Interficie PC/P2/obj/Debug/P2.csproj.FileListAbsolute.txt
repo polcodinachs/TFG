@@ -108,3 +108,8 @@ C:\Users\p.codinachs.la.torre\Documents\TFG\Interficie PC\P2\bin\Debug\Microsoft
 C:\Users\p.codinachs.la.torre\Documents\TFG\Interficie PC\P2\bin\Debug\Microsoft.WindowsAPICodePack.xml
 C:\Users\p.codinachs.la.torre\Documents\TFG\Interficie PC\P2\bin\Debug\Microsoft.WindowsAPICodePack.Shell.xml
 C:\Users\p.codinachs.la.torre\Documents\TFG\Interficie PC\P2\obj\Debug\P2.csproj.CopyComplete
+\\Mac\Home\Desktop\TFG Interficies\Interficie PC\P2\bin\Debug\Microsoft.WindowsAPICodePack.dll
+\\Mac\Home\Desktop\TFG Interficies\Interficie PC\P2\bin\Debug\Microsoft.WindowsAPICodePack.Shell.dll
+\\Mac\Home\Desktop\TFG Interficies\Interficie PC\P2\bin\Debug\Microsoft.WindowsAPICodePack.xml
+\\Mac\Home\Desktop\TFG Interficies\Interficie PC\P2\bin\Debug\Microsoft.WindowsAPICodePack.Shell.xml
+\\Mac\Home\Desktop\TFG Interficies\Interficie PC\P2\obj\Debug\P2.csproj.CopyComplete
