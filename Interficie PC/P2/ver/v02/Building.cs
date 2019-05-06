@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using System.Drawing;
 using System.Collections;
 using System.IO;
+using Microsoft.WindowsAPICodePack.Dialogs;
 
 namespace TFG.ver.v02
 {
@@ -23,6 +24,7 @@ namespace TFG.ver.v02
         public int contadorLinies = 0;
 
         public string movA, movB;
+        public string path, filename;
 
         List<string> mov = new List<string>();
 
@@ -39,23 +41,42 @@ namespace TFG.ver.v02
 
         public double xRectangle, yRectangle;
 
-        private void Building_Load(object sender, EventArgs e)
+        private void button7_Click(object sender, EventArgs e)
         {
-            Graphics gObject = CreateGraphics();
-            Pen redPen = new Pen(Color.Red, 3);
-            gObject.DrawRectangle(redPen, 10, 10, 500, 500);
-            System.IO.File.WriteAllText(@"\\Mac\Home\Desktop\TFG Interficies\prova.c", string.Empty);
-
+            CommonOpenFileDialog dialog = new CommonOpenFileDialog();
+            dialog.InitialDirectory = "C:\\Users";
+            dialog.IsFolderPicker = true;
+            if (dialog.ShowDialog() == CommonFileDialogResult.Ok)
+            {
+                MessageBox.Show("You selected: " + dialog.FileName);
+            }
+            path = dialog.FileName;
+            filename = textBox10.Text + ".c";
+            File.WriteAllText(path + filename, String.Empty);
+            label12.Text = path + filename;
         }
 
-        private void canvas_Paint(object sender, PaintEventArgs e)
+        private void button9_Click(object sender, EventArgs e)
         {
-            
+            Graphics gObject = CreateGraphics();
+            Graphics G = Graphics.FromImage(pictureBox1.Image);
+            Pen grayPen = new Pen(Color.LightGray, 1);
+            Pen redPen = new Pen(Color.Red, 3);
+            G.DrawRectangle(redPen, 10, 10, 500, 500);
+            for (int i = 1; i <= 50; i++)
+            {
+                gObject.DrawLine(grayPen, 10, 10 * i, 510, 10 * i);
+            }
+
+            for (int i = 1; i <= 50; i++)
+            {
+                gObject.DrawLine(grayPen, 10 * i, 10, 10 * i, 510);
+            }
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
+            
         }
 
         //AMUNT
@@ -65,6 +86,7 @@ namespace TFG.ver.v02
 
             Pen redPen = new Pen(Color.Red, 3);
             gObject.DrawRectangle(redPen, 10, 10, 500, 500);
+            
 
             inicialX = inicialX + Convert.ToDouble(textBox3.Text);
             inicialY = inicialY - Convert.ToDouble(textBox4.Text);
@@ -254,7 +276,6 @@ namespace TFG.ver.v02
                 PointF point2 = new PointF((float)(puntX[contadorPunts]), (float)((puntY[contadorPunts])));
                 gObject.DrawLine(blackPen, point1, point2);
                 richTextBox1.AppendText(Convert.ToString(puntX[contadorPunts]) + "," + Convert.ToString(puntY[contadorPunts]) + "\n");
-                richTextBox2.AppendText(Convert.ToString(esCercle[contadorPunts]) + "\n");
                 contadorLinies++;
             }
             label1.Text = Convert.ToString(puntX[contadorPunts - 1] + "," + puntY[contadorPunts - 1] + "///" + puntX[contadorPunts] + "," + puntY[contadorPunts]);
@@ -406,8 +427,9 @@ namespace TFG.ver.v02
 
         public void building()
         {
+            File.WriteAllText(path + filename, String.Empty);
             movA = "moveMotorTarget(motorA," + (0 + Convert.ToDouble(textBox3.Text)) + ", 35); \n moveMotorTarget(motorB," + (0 + Convert.ToDouble(textBox4.Text)) + ", 35);\n";
-            using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"\\Mac\Home\Desktop\TFG Interficies\prova.c", true))
+            using (System.IO.StreamWriter file = new System.IO.StreamWriter(@path + filename + ".c", true))
             {
                 file.WriteLine("#pragma config(Motor,  motorA,          MotorA,        tmotorEV3_Medium, PIDControl, encoder)");
                 file.WriteLine("#pragma config(Motor,  motorB,          MotorB,        tmotorEV3_Medium, PIDControl, encoder)");
@@ -444,20 +466,20 @@ namespace TFG.ver.v02
                 }
                 //Cercle
                 if (esCercle[i - 1] == 1) {
-                    using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"\\Mac\Home\Desktop\TFG Interficies\prova.c", true))
+                    using (System.IO.StreamWriter file = new System.IO.StreamWriter(@path + filename + ".c", true))
                     {
                         file.WriteLine("#include <Propies/cercle.h>");
                     }
                     movA = "cercle(" + radi[i] + "," + angleFinal[i] + "," + angleInici[i] + ")";
                 }
 
-                using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"\\Mac\Home\Desktop\TFG Interficies\prova.c", true))
+                using (System.IO.StreamWriter file = new System.IO.StreamWriter(@path + filename + ".c", true))
                 {
                     file.WriteLine(movA);
                     file.WriteLine("waitUntilMotorStop(motorA); waitUntilMotorStop(motorB);");
                 }
             }
-            using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"\\Mac\Home\Desktop\TFG Interficies\prova.c", true))
+            using (System.IO.StreamWriter file = new System.IO.StreamWriter(@path + filename + ".c", true))
             {
                 file.WriteLine("} }");
             }

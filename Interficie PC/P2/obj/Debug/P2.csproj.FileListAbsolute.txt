@@ -91,3 +91,20 @@ C:\Users\p.codinachs.la.torre\Downloads\ggg\ggg\Interficie PC-parents co╠Çpia
 \\Mac\Home\Desktop\TFG Interficies\Interficie PC\P2\obj\Debug\TFG.ver.v02.canvas.resources
 \\Mac\Home\Desktop\TFG Interficies\Interficie PC\P2\obj\Debug\TFG.ControlManual.resources
 \\Mac\Home\Desktop\TFG Interficies\Interficie PC\P2\obj\Debug\TFG.ver.v02.Principal.resources
+C:\Users\p.codinachs.la.torre\Documents\TFG\Interficie PC\P2\bin\Debug\TFG.exe
+C:\Users\p.codinachs.la.torre\Documents\TFG\Interficie PC\P2\bin\Debug\TFG.pdb
+C:\Users\p.codinachs.la.torre\Documents\TFG\Interficie PC\P2\obj\Debug\P2.csprojAssemblyReference.cache
+C:\Users\p.codinachs.la.torre\Documents\TFG\Interficie PC\P2\obj\Debug\TFG.Properties.Resources.resources
+C:\Users\p.codinachs.la.torre\Documents\TFG\Interficie PC\P2\obj\Debug\TFG.ver.v02.canvas.resources
+C:\Users\p.codinachs.la.torre\Documents\TFG\Interficie PC\P2\obj\Debug\TFG.ControlManual.resources
+C:\Users\p.codinachs.la.torre\Documents\TFG\Interficie PC\P2\obj\Debug\TFG.Disseny.resources
+C:\Users\p.codinachs.la.torre\Documents\TFG\Interficie PC\P2\obj\Debug\TFG.ver.v02.Principal.resources
+C:\Users\p.codinachs.la.torre\Documents\TFG\Interficie PC\P2\obj\Debug\P2.csproj.GenerateResource.cache
+C:\Users\p.codinachs.la.torre\Documents\TFG\Interficie PC\P2\obj\Debug\P2.csproj.CoreCompileInputs.cache
+C:\Users\p.codinachs.la.torre\Documents\TFG\Interficie PC\P2\obj\Debug\TFG.exe
+C:\Users\p.codinachs.la.torre\Documents\TFG\Interficie PC\P2\obj\Debug\TFG.pdb
+C:\Users\p.codinachs.la.torre\Documents\TFG\Interficie PC\P2\bin\Debug\Microsoft.WindowsAPICodePack.dll
+C:\Users\p.codinachs.la.torre\Documents\TFG\Interficie PC\P2\bin\Debug\Microsoft.WindowsAPICodePack.Shell.dll
+C:\Users\p.codinachs.la.torre\Documents\TFG\Interficie PC\P2\bin\Debug\Microsoft.WindowsAPICodePack.xml
+C:\Users\p.codinachs.la.torre\Documents\TFG\Interficie PC\P2\bin\Debug\Microsoft.WindowsAPICodePack.Shell.xml
+C:\Users\p.codinachs.la.torre\Documents\TFG\Interficie PC\P2\obj\Debug\P2.csproj.CopyComplete
