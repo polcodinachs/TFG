@@ -99,7 +99,8 @@
             "Lletra I",
             "Lletra K",
             "Lletra L",
-            "Lletra M"});
+            "Lletra M",
+            "Cercle"});
             this.listBox1.Location = new System.Drawing.Point(60, 106);
             this.listBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listBox1.Name = "listBox1";
