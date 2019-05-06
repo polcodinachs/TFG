@@ -9,6 +9,8 @@
 
 //#include <KioskLibraries/VexIQ/ArmBot_Kiosk.c>
 
+#include <Propies/cercle.h>
+
 #define ARDUINO_PORT S1
 #define ARDUINO_ADRESS 0x08
 
@@ -574,21 +576,6 @@ void lletraM() {
 	}
 }
 
-//prova cercle
-void cercle(){
-	moveMotorTarget(motorA, 3000, 50);
-	waitUntilMotorStop(motorA);
-	for(int i = 1; i <= 108; i++){
-		moveMotorTarget(motorA, (cosDegrees(10*i)*500), (cosDegrees(10*i)*50));
-		moveMotorTarget(motorB, (sinDegrees(10*i)*500), (sinDegrees(10*i)*50));
-		waitUntilMotorStop(motorA);
-		waitUntilMotorStop(motorB);
-		if(i == 36 || i == 72){
-			moveMotorTarget(motorC, 5, 50);
-		}
-}
-}
-
 task main()
 {
 	while(true)
@@ -719,8 +706,10 @@ task main()
 				lletraL();
 				break;
 			case 23:
-			cercle();
-				//lletraM();
+				lletraM();
+				break;
+			case 24:
+				cercle(1000.00, 36.00, 1);
 				break;
 		}
 	}
