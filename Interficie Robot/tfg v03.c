@@ -9,7 +9,7 @@
 
 //#include <KioskLibraries/VexIQ/ArmBot_Kiosk.c>
 
-
+#include "cercle.h"
 
 #define ARDUINO_PORT S1
 #define ARDUINO_ADRESS 0x08
@@ -580,45 +580,22 @@ void lletraM() {
 void cercle(float radius, float sweepAngle, int startAngle){
 	int sentitX, sentitY;
 	float sweepAngle2 = abs(sweepAngle) / 10;
+	float startAngle2;
 	switch (startAngle) {
 		case 270:
-			if (sweepAngle > 0) {
-				sentitX = 1;
-				sentitY = -1;
-			} else if (sweepAngle < 0) {
-				sentitX = -1;
-				sentitY = -1;
-			}
+			startAngle2 = 18;
 			break;
 		case 0:
-			if (sweepAngle > 0) {
-				sentitX = -1;
-				sentitY = -1;
-			} else if (sweepAngle < 0) {
-				sentitX = -1;
-				sentitY = 1;
-			}
+			startAngle2 = 27;
 			break;
 		case 90:
-			if (sweepAngle > 0) {
-				sentitX = -1;
-				sentitY = 1;
-			} else if (sweepAngle < 0) {
-				sentitX = 1;
-				sentitY = 1;
-			}
+			startAngle2 = 1;
 			break;
 		case 180:
-			if (sweepAngle > 0) {
-				sentitX = 1;
-				sentitY = 1;
-			} else if (sweepAngle < 0 ) {
-				sentitX = 1;
-				sentitY = -1;
-			}
+			startAngle2 = 9;
 			break;
 	}
-	for(int i = 1; i <= 9; i++){
+	for(int i = startAngle2; i <= sweepAngle2; i++){
 		moveMotorTarget(motorA, (cosDegrees(10*i) * radius), (cosDegrees(10*i)* sentitX * 50));
 		moveMotorTarget(motorB, (sinDegrees(10*i) * radius), (sinDegrees(10*i)* sentitY * -50));
 		waitUntilMotorStop(motorA);
@@ -762,7 +739,7 @@ task main()
 				lletraM();
 				break;
 			case 24:
-				cercle(1000.00, 36.00, 1);
+				cercle(500.00, 180.00, 90.00);
 				break;
 		}
 	}
