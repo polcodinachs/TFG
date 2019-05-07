@@ -56,7 +56,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(10, 100, 1, 10);
-            this.menuStrip1.Size = new System.Drawing.Size(191, 674);
+            this.menuStrip1.Size = new System.Drawing.Size(157, 674);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -66,7 +66,7 @@
             this.toolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem1.Image")));
             this.toolStripMenuItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(168, 129);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(134, 129);
             this.toolStripMenuItem1.Text = "Control Manual";
             this.toolStripMenuItem1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
@@ -91,9 +91,14 @@
             // 
             // buildingToolStripMenuItem
             // 
+            this.buildingToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.buildingToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("buildingToolStripMenuItem.Image")));
+            this.buildingToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.buildingToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 50, 0, 0);
             this.buildingToolStripMenuItem.Name = "buildingToolStripMenuItem";
-            this.buildingToolStripMenuItem.Size = new System.Drawing.Size(134, 29);
+            this.buildingToolStripMenuItem.Size = new System.Drawing.Size(134, 129);
             this.buildingToolStripMenuItem.Text = "Building";
+            this.buildingToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.buildingToolStripMenuItem.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
             // 
             // panel1
@@ -104,9 +109,9 @@
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.comboBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(191, 0);
+            this.panel1.Location = new System.Drawing.Point(157, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1048, 100);
+            this.panel1.Size = new System.Drawing.Size(1082, 100);
             this.panel1.TabIndex = 1;
             // 
             // label2

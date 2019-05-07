@@ -25,6 +25,7 @@ namespace TFG.ver.v02
 
         public string movA, movB;
         public string path, filename;
+        public int capes;
 
         List<string> mov = new List<string>();
 
@@ -36,8 +37,8 @@ namespace TFG.ver.v02
         List<double> angleFinal = new List<double>();
         List<int> sentit = new List<int>();
 
-        double inicialX = 25;
-        double inicialY = 760;
+        double inicialX = 50;
+        double inicialY = 750;
 
         public double xRectangle, yRectangle;
 
@@ -61,16 +62,16 @@ namespace TFG.ver.v02
         {
             Graphics gObject = CreateGraphics();
             Pen grayPen = new Pen(Color.LightGray, 1);
-            Pen redPen = new Pen(Color.Red, 3);
-            gObject.DrawRectangle(redPen, 10, 10, 760, 760);
-            for (int i = 1; i <= 78; i++)
+            Pen redPen = new Pen(Color.Red, 2);
+            gObject.DrawRectangle(redPen, 10, 10, 800, 790);
+            for (int i = 1; i <= 16; i++)
             {
-                gObject.DrawLine(grayPen, 10, 10 * i, 761, 10 * i);
+                gObject.DrawLine(grayPen, 10, 10 * 5 * i, 810, 10 * 5 * i);
             }
 
-            for (int i = 1; i <= 78; i++)
+            for (int i = 1; i <= 16; i++)
             {
-                gObject.DrawLine(grayPen, 10 * i, 10, 10 * i, 761);
+                gObject.DrawLine(grayPen, 10 * 5 * i, 10, 10 * 5 * i, 800);
             }
         }
 
@@ -442,7 +443,6 @@ namespace TFG.ver.v02
             // Draw arc to screen.
             gObject.DrawArc(blackPen, (float)xRectangle, (float)yRectangle, (float)width, (float)height, startAngle, sweepAngle);
             richTextBox1.AppendText(Convert.ToString(puntX[contadorPunts]) + "," + Convert.ToString(puntY[contadorPunts]) + "\n");
-            //richTextBox2.AppendText(Convert.ToString(esCercle[contadorPunts]) + "\n");
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -452,63 +452,79 @@ namespace TFG.ver.v02
 
         public void building()
         {
-            File.WriteAllText(path + filename, String.Empty);
-            movA = "moveMotorTarget(motorA," + (0 + Convert.ToDouble(textBox3.Text)) + ", 35); \n moveMotorTarget(motorB," + (0 + Convert.ToDouble(textBox4.Text)) + ", 35);\n";
-            using (System.IO.StreamWriter file = new System.IO.StreamWriter(@path + filename + ".c", true))
+            if (puntX[contadorPunts] == inicialX && puntY[contadorPunts] == inicialY)
             {
-                file.WriteLine("#pragma config(Motor,  motorA,          MotorA,        tmotorEV3_Medium, PIDControl, encoder)");
-                file.WriteLine("#pragma config(Motor,  motorB,          MotorB,        tmotorEV3_Medium, PIDControl, encoder)");
-                file.WriteLine("#pragma config(Motor,  motorC,          MotorC,        tmotorEV3_Large, PIDControl, encoder)");
-                file.WriteLine("task main() {");
-                file.WriteLine(movA);
-                file.WriteLine("waitUntilMotorStop(motorA); waitUntilMotorStop(motorB);");
-                file.WriteLine("for (int i = 1; i <= 2; i ++) {");
-            }
-
-            for (int i = 1; i <= puntX.Count - 1; i++)
-            {
-                //Moviments després del primer
-                string signeX, signeY;
-                float distanciaX = (float)(puntX[i] - puntX[i - 1]) * (float)10;
-                float distanciaY = (float)(puntY[i] - puntY[i - 1]) * (float)-10;
-
-                if (puntX[i - 1] > puntX[i]) { signeX = "-"; } else { signeX = ""; }
-
-                if (puntY[i] > puntY[i - 1]) { signeY = "-";  } else { signeY = ""; }
-
-                //Angle
-                if (distanciaX != 0 && distanciaY != 0 && esCercle[i - 1] == 0)
-                {
-                    double angle = (Math.Atan((Convert.ToDouble(textBox5.Text) / Convert.ToDouble(textBox2.Text)))) * (180 / Math.PI);
-                    float velocitatX = (float)Math.Cos(angle * Math.PI / 180) * 35;
-                    float velocitatY = (float)Math.Sin(angle * Math.PI / 180) * 35;
-                    movA = "moveMotorTarget(motorA," + Math.Abs(distanciaX) + "," + signeX + Math.Abs(velocitatX) + "); \n moveMotorTarget(motorB," + Math.Abs(distanciaY) + "," + signeY + Math.Abs(velocitatY) + ");\n";
-                }
-                //Recta
-                else
-                {
-                    movA = "moveMotorTarget(motorA," + Math.Abs(distanciaX) + ", " + signeX +"35); \n moveMotorTarget(motorB," + Math.Abs(distanciaY) + ", " + signeY + "35);\n";
-                }
-                //Cercle
-                if (esCercle[i - 1] == 1) {
-                    using (System.IO.StreamWriter file = new System.IO.StreamWriter(@path + filename + ".c", true))
-                    {
-                        file.WriteLine("#include <Propies/cercle.h>");
-                    }
-                    movA = "cercle(" + radi[i]*10 + "," + angleFinal[i] + "," + angleInici[i] + ")";
-                }
-
+                capes = Convert.ToInt32(textBox11.Text);
+                File.WriteAllText(path + filename, String.Empty);
+                movA = "moveMotorTarget(motorA," + (0 + Convert.ToDouble(textBox3.Text)) + ", 35); \n moveMotorTarget(motorB," + (0 + Convert.ToDouble(textBox4.Text)) + ", 35);\n";
                 using (System.IO.StreamWriter file = new System.IO.StreamWriter(@path + filename + ".c", true))
                 {
+                    file.WriteLine("#pragma config(Motor,  motorA,          MotorA,        tmotorEV3_Medium, PIDControl, encoder)");
+                    file.WriteLine("#pragma config(Motor,  motorB,          MotorB,        tmotorEV3_Medium, PIDControl, encoder)");
+                    file.WriteLine("#pragma config(Motor,  motorC,          MotorC,        tmotorEV3_Large, PIDControl, encoder)");
+                    file.WriteLine("task main() {");
                     file.WriteLine(movA);
                     file.WriteLine("waitUntilMotorStop(motorA); waitUntilMotorStop(motorB);");
+                    file.WriteLine("for (int i = 1; i <= " + capes + "; i ++) {");
+                }
+
+                for (int i = 1; i <= puntX.Count - 1; i++)
+                {
+                    //Moviments després del primer
+                    string signeX, signeY;
+                    float distanciaX = (float)(puntX[i] - puntX[i - 1]) * (float)10;
+                    float distanciaY = (float)(puntY[i] - puntY[i - 1]) * (float)-10;
+
+                    if (puntX[i - 1] > puntX[i]) { signeX = "-"; } else { signeX = ""; }
+
+                    if (puntY[i] > puntY[i - 1]) { signeY = "-"; } else { signeY = ""; }
+
+                    //Angle
+                    if (distanciaX != 0 && distanciaY != 0 && esCercle[i - 1] == 0)
+                    {
+                        double angle = (Math.Atan((Convert.ToDouble(textBox5.Text) / Convert.ToDouble(textBox2.Text)))) * (180 / Math.PI);
+                        float velocitatX = (float)Math.Cos(angle * Math.PI / 180) * 35;
+                        float velocitatY = (float)Math.Sin(angle * Math.PI / 180) * 35;
+                        movA = "moveMotorTarget(motorA," + Math.Abs(distanciaX) + "," + signeX + Math.Abs(velocitatX) + "); \n moveMotorTarget(motorB," + Math.Abs(distanciaY) + "," + signeY + Math.Abs(velocitatY) + ");\n";
+                    }
+                    //Recta
+                    else
+                    {
+                        movA = "moveMotorTarget(motorA," + Math.Abs(distanciaX) + ", " + signeX + "35); \n moveMotorTarget(motorB," + Math.Abs(distanciaY) + ", " + signeY + "35);\n";
+                    }
+                    //Cercle
+                    if (esCercle[i - 1] == 1)
+                    {
+                        using (System.IO.StreamWriter file = new System.IO.StreamWriter(@path + filename + ".c", true))
+                        {
+                            file.WriteLine("#include <Propies/cercle.h>");
+                        }
+                        movA = "cercle(" + radi[i] * 10 + "," + angleFinal[i] + "," + angleInici[i] + ")";
+                    }
+
+                    using (System.IO.StreamWriter file = new System.IO.StreamWriter(@path + filename + ".c", true))
+                    {
+                        file.WriteLine(movA);
+                        file.WriteLine("waitUntilMotorStop(motorA); waitUntilMotorStop(motorB);");
+                    }
+                }
+                using (System.IO.StreamWriter file = new System.IO.StreamWriter(@path + filename + ".c", true))
+                {
+                    file.WriteLine("} }");
                 }
             }
-            using (System.IO.StreamWriter file = new System.IO.StreamWriter(@path + filename + ".c", true))
+            else if (puntX[contadorPunts] != inicialX || puntY[contadorPunts] != inicialY)
             {
-                file.WriteLine("} }");
+                MessageBox.Show("Punt inicial i final no coincideien.");
+            }
+            else if (textBox11.Text == "")
+            {
+                MessageBox.Show("Introdueix un nombre de capes.");
+            }
+            else if (textBox10.Text.Length == 1)
+            {
+                MessageBox.Show("Introdueix un nom vàlid per al fitxer a exportar.");
             }
         }
-
     }
 }
