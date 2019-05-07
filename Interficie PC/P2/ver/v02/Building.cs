@@ -37,7 +37,7 @@ namespace TFG.ver.v02
         List<int> sentit = new List<int>();
 
         double inicialX = 25;
-        double inicialY = 500;
+        double inicialY = 760;
 
         public double xRectangle, yRectangle;
 
@@ -56,20 +56,21 @@ namespace TFG.ver.v02
             label12.Text = path + filename;
         }
 
+        //GRID
         private void button9_Click(object sender, EventArgs e)
         {
             Graphics gObject = CreateGraphics();
             Pen grayPen = new Pen(Color.LightGray, 1);
             Pen redPen = new Pen(Color.Red, 3);
-            gObject.DrawRectangle(redPen, 10, 10, 500, 500);
-            for (int i = 1; i <= 50; i++)
+            gObject.DrawRectangle(redPen, 10, 10, 760, 760);
+            for (int i = 1; i <= 78; i++)
             {
-                gObject.DrawLine(grayPen, 10, 10 * i, 510, 10 * i);
+                gObject.DrawLine(grayPen, 10, 10 * i, 761, 10 * i);
             }
 
-            for (int i = 1; i <= 50; i++)
+            for (int i = 1; i <= 78; i++)
             {
-                gObject.DrawLine(grayPen, 10 * i, 10, 10 * i, 510);
+                gObject.DrawLine(grayPen, 10 * i, 10, 10 * i, 761);
             }
         }
 
@@ -82,9 +83,6 @@ namespace TFG.ver.v02
         public void button1_Click(object sender, EventArgs e)
         {
             Graphics gObject = CreateGraphics();
-
-            Pen redPen = new Pen(Color.Red, 3);
-            gObject.DrawRectangle(redPen, 10, 10, 500, 500);
             
 
             inicialX = inicialX + Convert.ToDouble(textBox3.Text);
@@ -93,15 +91,13 @@ namespace TFG.ver.v02
             Pen blackPen = new Pen(Color.Black, 8);
             if (contadorPunts == 0)
             {
-                if (inicialX < 25 || inicialX > 500 || inicialY < 20 || inicialY > 500) {
-                    MessageBox.Show("Punt fora de rang!");
-                } else {
+
                     puntX.Add(inicialX);
                     puntY.Add(inicialY);
                     esCercle.Add(0);
                     richTextBox1.AppendText(Convert.ToString(puntX[0]) + "," + Convert.ToString(puntY[0]) + "\n");
                     richTextBox2.AppendText(Convert.ToString(esCercle[contadorPunts]) + "\n");
-                    puntX.Add(inicialX);
+                    puntX.Add(inicialX );
                     puntY.Add(inicialY - Convert.ToDouble(textBox1.Text));
                     richTextBox1.AppendText(Convert.ToString(puntX[1]) + "," + Convert.ToString(puntY[1]) + "\n");
                     contadorPunts++;
@@ -109,7 +105,7 @@ namespace TFG.ver.v02
                     Point point2 = new Point(Convert.ToInt32(inicialX), Convert.ToInt32(puntY[contadorPunts]));
                     gObject.DrawLine(blackPen, point1, point2);
                     contadorLinies++;
-                }
+
             }
             else
             {
@@ -128,7 +124,7 @@ namespace TFG.ver.v02
                     PointF point2 = new PointF((float)(puntX[contadorPunts]), (float)((puntY[contadorPunts])));
                     gObject.DrawLine(blackPen, point1, point2);
                     richTextBox1.AppendText(Convert.ToString(puntX[contadorPunts]) + "," + Convert.ToString(puntY[contadorPunts]) + "\n");
-                    richTextBox2.AppendText(Convert.ToString(esCercle[contadorPunts]) + "\n");
+                    //richTextBox2.AppendText(Convert.ToString(esCercle[contadorPunts]) + "\n");
                     contadorLinies++;
                 }
             }
@@ -149,9 +145,6 @@ namespace TFG.ver.v02
         private void button3_Click(object sender, EventArgs e)
         {
             Graphics gObject = CreateGraphics();
-
-            Pen redPen = new Pen(Color.Red, 3);
-            gObject.DrawRectangle(redPen, 10, 10, 500, 500);
 
             inicialX = inicialX + Convert.ToDouble(textBox3.Text);
             inicialY = inicialY - Convert.ToDouble(textBox4.Text);
@@ -196,9 +189,6 @@ namespace TFG.ver.v02
         {
             Graphics gObject = CreateGraphics();
 
-            Pen redPen = new Pen(Color.Red, 3);
-            gObject.DrawRectangle(redPen, 10, 10, 500, 500);
-
             inicialX = inicialX + Convert.ToDouble(textBox3.Text);
             inicialY = inicialY - Convert.ToDouble(textBox4.Text);
 
@@ -240,9 +230,6 @@ namespace TFG.ver.v02
         private void button5_Click(object sender, EventArgs e)
         {
             Graphics gObject = CreateGraphics();
-
-            Pen redPen = new Pen(Color.Red, 3);
-            gObject.DrawRectangle(redPen, 10, 10, 500, 500);
 
             inicialX = inicialX + Convert.ToDouble(textBox3.Text);
             inicialY = inicialY - Convert.ToDouble(textBox4.Text);
@@ -287,9 +274,6 @@ namespace TFG.ver.v02
         {
             Graphics gObject = CreateGraphics();
 
-            Pen redPen = new Pen(Color.Red, 3);
-            gObject.DrawRectangle(redPen, 10, 10, 500, 500);
-
             inicialX = inicialX + Convert.ToDouble(textBox3.Text);
             inicialY = inicialY - Convert.ToDouble(textBox4.Text);
 
@@ -322,7 +306,6 @@ namespace TFG.ver.v02
                 PointF point2 = new PointF((float)(puntX[contadorPunts]), (float)((puntY[contadorPunts])));
                 gObject.DrawLine(blackPen, point1, point2);
                 richTextBox1.AppendText(Convert.ToString(puntX[contadorPunts]) + "," + Convert.ToString(puntY[contadorPunts]) + "\n");
-                richTextBox2.AppendText(Convert.ToString(esCercle[contadorPunts]) + "\n");
                 contadorLinies++;
             }
 
@@ -362,8 +345,8 @@ namespace TFG.ver.v02
             Pen blackPen = new Pen(Color.Black, 8);
 
             // Create coordinates of rectangle to bound ellipse.
-            int width = Convert.ToInt32(textBox8.Text) * 2;
-            int height = Convert.ToInt32(textBox8.Text) * 2;
+            double width = Convert.ToDouble(textBox8.Text) * 2;
+            double height = Convert.ToDouble(textBox8.Text) * 2;
             double radius = Convert.ToDouble(textBox8.Text);
 
             // Create start and sweep angles on ellipse.
@@ -385,21 +368,59 @@ namespace TFG.ver.v02
                     puntX.Add((radius * Math.Sin(sweepAngle * Math.PI / 180)) + puntX[contadorPunts - 1]);
                     puntY.Add((radius * Math.Cos(sweepAngle * Math.PI / 180)) + puntY[contadorPunts - 1] + radius);
                 }
-                else if (sweepAngle != 90)
+                else if (Math.Abs(sweepAngle) != 90)
                 {
                     puntX.Add((radius * Math.Sin(sweepAngle * Math.PI / 180)) + puntX[contadorPunts - 1]);
-                    puntY.Add((radius * Math.Cos((-sweepAngle) * Math.PI / 180)));
+                    puntY.Add(-(radius * Math.Cos(sweepAngle * Math.PI / 180)) + puntY[contadorPunts - 1] + radius);
                 }
 
             } else if (radioButton2.Checked) {
                 xRectangle = puntX[contadorPunts - 1] - width;
                 yRectangle = puntY[contadorPunts - 1] - height / 2;
+
+                if (Math.Abs(sweepAngle) == 90)
+                {
+                    puntX.Add((radius * Math.Cos(sweepAngle * Math.PI / 180)) + puntX[contadorPunts - 1] - radius);
+                    puntY.Add((radius * Math.Sin(sweepAngle * Math.PI / 180)) + puntY[contadorPunts - 1]);
+                } else if (Math.Abs(sweepAngle) != 90) {
+                    puntX.Add((radius * Math.Cos(sweepAngle * Math.PI / 180)) + puntX[contadorPunts - 1] - radius);
+                    puntY.Add((radius * Math.Sin(sweepAngle * Math.PI / 180)) + puntY[contadorPunts - 1]);
+                }
             } else if (radioButton3.Checked) {
                 xRectangle = puntX[contadorPunts - 1] - width / 2;
                 yRectangle = puntY[contadorPunts - 1] - height;
+
+                if (sweepAngle == 90)
+                {
+                    puntX.Add(-(radius * Math.Cos(sweepAngle * Math.PI / 180)) + puntX[contadorPunts - 1] - radius);
+                    puntY.Add(-(radius * Math.Sin(sweepAngle * Math.PI / 180)) + puntY[contadorPunts - 1]);
+                }
+                else if (sweepAngle == -90)
+                {
+                    puntX.Add(-(radius * Math.Cos(sweepAngle * Math.PI / 180)) + puntX[contadorPunts - 1] + radius);
+                    puntY.Add((radius * Math.Sin(sweepAngle * Math.PI / 180)) + puntY[contadorPunts - 1]);
+                }
+                else if (sweepAngle != 90)
+                {
+                    puntX.Add((-radius * Math.Sin(sweepAngle * Math.PI / 180)) + puntX[contadorPunts - 1]);
+                    puntY.Add((radius * Math.Cos(sweepAngle * Math.PI / 180)) + puntY[contadorPunts - 1] - radius);
+                }
+
+                
             } else if(radioButton4.Checked) {
-                xRectangle = puntX[contadorPunts - 1] - width / 2;
+                xRectangle = puntX[contadorPunts - 1];
                 yRectangle = puntY[contadorPunts - 1] - height / 2;
+
+                if (Math.Abs(sweepAngle) == 90)
+                {
+                    puntX.Add((radius * Math.Cos(sweepAngle * Math.PI / 180)) + puntX[contadorPunts - 1] + radius);
+                    puntY.Add(-(radius * Math.Sin(sweepAngle * Math.PI / 180)) + puntY[contadorPunts - 1]);
+                }
+                else if (Math.Abs(sweepAngle) != 90)
+                {
+                    puntX.Add(-(radius * Math.Cos(sweepAngle * Math.PI / 180)) + puntX[contadorPunts - 1] + radius);
+                    puntY.Add(-(radius * Math.Sin(sweepAngle * Math.PI / 180)) + puntY[contadorPunts - 1]);
+                }
             }
 
             esCercle.Add(1);
@@ -419,7 +440,7 @@ namespace TFG.ver.v02
             if (sweepAngle > 0) { sentit.Insert(contadorPunts, 1); } else if (sweepAngle < 0) { sentit.Insert(contadorPunts, -1); };
 
             // Draw arc to screen.
-            gObject.DrawArc(blackPen, (float)xRectangle, (float)yRectangle, width, height, startAngle, sweepAngle);
+            gObject.DrawArc(blackPen, (float)xRectangle, (float)yRectangle, (float)width, (float)height, startAngle, sweepAngle);
             richTextBox1.AppendText(Convert.ToString(puntX[contadorPunts]) + "," + Convert.ToString(puntY[contadorPunts]) + "\n");
             //richTextBox2.AppendText(Convert.ToString(esCercle[contadorPunts]) + "\n");
         }
@@ -448,8 +469,8 @@ namespace TFG.ver.v02
             {
                 //Moviments després del primer
                 string signeX, signeY;
-                float distanciaX = (float)(puntX[i] - puntX[i - 1]) * (float)15;
-                float distanciaY = (float)(puntY[i] - puntY[i - 1]) * (float)-15;
+                float distanciaX = (float)(puntX[i] - puntX[i - 1]) * (float)10;
+                float distanciaY = (float)(puntY[i] - puntY[i - 1]) * (float)-10;
 
                 if (puntX[i - 1] > puntX[i]) { signeX = "-"; } else { signeX = ""; }
 
@@ -474,7 +495,7 @@ namespace TFG.ver.v02
                     {
                         file.WriteLine("#include <Propies/cercle.h>");
                     }
-                    movA = "cercle(" + radi[i] + "," + angleFinal[i] + "," + angleInici[i] + ")";
+                    movA = "cercle(" + radi[i]*10 + "," + angleFinal[i] + "," + angleInici[i] + ")";
                 }
 
                 using (System.IO.StreamWriter file = new System.IO.StreamWriter(@path + filename + ".c", true))
