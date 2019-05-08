@@ -471,7 +471,7 @@ namespace TFG.ver.v02
             Console.WriteLine(esCercle);
             Console.WriteLine(esAngle);
             
-                if (Math.Truncate(puntX[contadorPunts]) == inicialX && Math.Truncate(puntY[contadorPunts]) == inicialY)
+                if (true)
                 {
                     capes = Convert.ToInt32(textBox11.Text);
                     File.WriteAllText(path + filename, String.Empty);
@@ -559,12 +559,8 @@ namespace TFG.ver.v02
                     {
                         //richTextBox2.AppendText(Convert.ToString(esAngle[i]));
                         richTextBox2.AppendText(Convert.ToString(moviments[i]));
-                    }
-                    
-                }
-                else if (Math.Truncate(puntX[contadorPunts]) != inicialX || Math.Truncate(puntY[contadorPunts]) != inicialY)
-                {
-                    MessageBox.Show("Punt inicial i final no coincideien.");
+                    } 
+                
                 }
                 else if (textBox11.Text == "")
                 {
