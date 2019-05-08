@@ -495,9 +495,9 @@ namespace TFG.ver.v02
                             
                             using (System.IO.StreamWriter file = new System.IO.StreamWriter(@path + filename + ".c", true))
                             {
-                                file.WriteLine("float parRadi"+ afegirCercles +"= " + radi[afegirCercles] * 10 + ";");
-                                file.WriteLine("float parAngleFinal" + afegirCercles + " = " + angleFinal[afegirCercles] + ";");
-                                file.WriteLine("float parAngleInici" + afegirCercles + " = " + angleInici[afegirCercles] + ";");
+                                file.WriteLine("long parRadi"+ afegirCercles +"= " + radi[afegirCercles] * 10 + ";");
+                                file.WriteLine("long parAngleFinal" + afegirCercles + " = " + angleFinal[afegirCercles] + ";");
+                                file.WriteLine("int parAngleInici" + afegirCercles + " = " + angleInici[afegirCercles] + ";");
                             }
                         afegirCercles++;
                         }
