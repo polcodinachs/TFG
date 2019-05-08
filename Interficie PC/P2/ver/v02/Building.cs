@@ -22,10 +22,16 @@ namespace TFG.ver.v02
 
         public int contadorPunts = 0;
         public int contadorLinies = 0;
+        public int contadorCercles = 0;
+        public int afegirCercles = 0;
 
         public string movA, movB;
         public string path, filename;
         public int capes;
+
+        public float distanciaX, distanciaY;
+
+        public string signeX, signeY;
 
         List<string> mov = new List<string>();
 
@@ -37,6 +43,7 @@ namespace TFG.ver.v02
         List<double> angleInici = new List<double>();
         List<double> angleFinal = new List<double>();
         List<int> sentit = new List<int>();
+        List<int> moviments = new List<int>();
 
         double inicialX = 50;
         double inicialY = 750;
@@ -99,7 +106,7 @@ namespace TFG.ver.v02
                     esCercle.Add(0);
                     esAngle.Add(0);
                     richTextBox1.AppendText(Convert.ToString(puntX[0]) + "," + Convert.ToString(puntY[0]) + "\n");
-                    richTextBox2.AppendText(Convert.ToString(esCercle[contadorPunts]) + "\n");
+                    //richTextBox2.AppendText(Convert.ToString(esCercle[contadorPunts]) + "\n");
                     puntX.Add(inicialX );
                     puntY.Add(inicialY - Convert.ToDouble(textBox1.Text));
                     richTextBox1.AppendText(Convert.ToString(puntX[1]) + "," + Convert.ToString(puntY[1]) + "\n");
@@ -142,6 +149,8 @@ namespace TFG.ver.v02
             {
 
             }
+
+            moviments.Add(1);
             
         }
 
@@ -161,7 +170,7 @@ namespace TFG.ver.v02
                 esCercle.Add(0);
                 esAngle.Add(0);
                 richTextBox1.AppendText(Convert.ToString(puntX[0]) + "," + Convert.ToString(puntY[0]) + "\n");
-                richTextBox2.AppendText(Convert.ToString(esCercle[contadorPunts]) + "\n");
+                //richTextBox2.AppendText(Convert.ToString(esCercle[contadorPunts]) + "\n");
                 puntX.Add(inicialX);
                 puntY.Add(inicialY + Convert.ToDouble(textBox1.Text));
                 richTextBox1.AppendText(Convert.ToString(puntX[1]) + "," + Convert.ToString(puntY[1]) + "\n");
@@ -188,6 +197,8 @@ namespace TFG.ver.v02
             label1.Text = Convert.ToString(puntX[contadorPunts - 1] + "," + puntY[contadorPunts - 1] + "///" + puntX[contadorPunts] + "," + puntY[contadorPunts]);
             label3.Text = Convert.ToString(puntX.Count + "," + puntY.Count);
             label4.Text = Convert.ToString(contadorPunts);
+
+            moviments.Add(2);
         }
 
         //DRETA
@@ -232,6 +243,8 @@ namespace TFG.ver.v02
             label1.Text = Convert.ToString(puntX[contadorPunts - 1] + "," + puntY[contadorPunts - 1] + "///" + puntX[contadorPunts] + "," + puntY[contadorPunts]);
             label3.Text = Convert.ToString(puntX.Count + "," + puntY.Count);
             label4.Text = Convert.ToString(contadorPunts);
+
+            moviments.Add(3);
         }
 
         //ESQUERRA
@@ -250,7 +263,7 @@ namespace TFG.ver.v02
                 esCercle.Add(0);
                 esAngle.Add(0);
                 richTextBox1.AppendText(Convert.ToString(puntX[0]) + "," + Convert.ToString(puntY[0]) + "\n");
-                richTextBox2.AppendText(Convert.ToString(esCercle[contadorPunts]) + "\n");
+                //richTextBox2.AppendText(Convert.ToString(esCercle[contadorPunts]) + "\n");
                 puntX.Add(inicialX - Convert.ToDouble(textBox1.Text));
                 puntY.Add(inicialY);
                 richTextBox1.AppendText(Convert.ToString(puntX[1]) + "," + Convert.ToString(puntY[1]) + "\n");
@@ -277,6 +290,8 @@ namespace TFG.ver.v02
             label1.Text = Convert.ToString(puntX[contadorPunts - 1] + "," + puntY[contadorPunts - 1] + "///" + puntX[contadorPunts] + "," + puntY[contadorPunts]);
             label3.Text = Convert.ToString(puntX.Count + "," + puntY.Count);
             label4.Text = Convert.ToString(contadorPunts);
+
+            moviments.Add(4);
         }
 
         //ANGLES
@@ -296,7 +311,7 @@ namespace TFG.ver.v02
                 esCercle.Add(0);
                 esAngle.Add(1);
                 richTextBox1.AppendText(Convert.ToString(puntX[0]) + "," + Convert.ToString(puntY[0]) + "\n");
-                richTextBox2.AppendText(Convert.ToString(esCercle[contadorPunts]) + "\n");
+                //richTextBox2.AppendText(Convert.ToString(esCercle[contadorPunts]) + "\n");
                 puntX.Add(inicialX + Convert.ToDouble(textBox2.Text));
                 puntY.Add(inicialY - Convert.ToDouble(textBox5.Text));
                 richTextBox1.AppendText(Convert.ToString(puntX[1]) + "," + Convert.ToString(puntY[1]) + "\n");
@@ -326,31 +341,19 @@ namespace TFG.ver.v02
             label1.Text = Convert.ToString(puntX[contadorPunts - 1] + "," + puntY[contadorPunts - 1] + "///" + puntX[contadorPunts] + "," + puntY[contadorPunts]);
             label3.Text = Convert.ToString(puntX.Count + "," + puntY.Count);
             label4.Text = Convert.ToString(contadorPunts);
+
+            moviments.Add(5);
         }
 
-        Pen p = new Pen(Color.Red, 3);
-        SolidBrush b = new SolidBrush(Color.Red);
-
-        private void Form1_MouseClick(object sender, MouseEventArgs e)
-        {
-            Graphics g = this.CreateGraphics();
-
-            p.Color = Color.Blue;
-            b.Color = Color.Blue;
-            g.FillEllipse(b, e.X, e.Y, 50, 50);
-            g.DrawEllipse(p, e.X, e.Y, 50, 50);
-            g.Dispose();
-        }
-
-        private void canvas_Load(object sender, EventArgs e)
-        {
-
-        }
 
         //CERCLE
         private void button8_Click(object sender, EventArgs e)
         {
             contadorPunts++;
+            contadorCercles++;
+
+            esCercle.Add(1);
+            esAngle.Add(0);
 
             Graphics gObject = CreateGraphics();
             // Create pen.
@@ -435,26 +438,27 @@ namespace TFG.ver.v02
                 }
             }
 
-            esCercle.Add(1);
-            esAngle.Add(0);
+
 
             //Enganyem al programa per tenir les llistes plenes
-            for (int i = 0; i <= contadorPunts; i++) {
-                angleInici.Insert(i, 0);
-                angleFinal.Insert(i, 0);
-                radi.Insert(i, 0);
-                sentit.Insert(i, 0);
-            }
+            //for (int i = 0; i <= contadorPunts - 1; i++) {
+            //    angleInici.Insert(i, 0);
+            //    angleFinal.Insert(i, 0);
+            //    radi.Insert(i, 0);
+            //    sentit.Insert(i, 0);
+            //}
 
             //Paràmetres del cercle
-            angleInici.Insert(contadorPunts, startAngle);
-            angleFinal.Insert(contadorPunts, sweepAngle);
-            radi.Insert(contadorPunts, radius);
-            if (sweepAngle > 0) { sentit.Insert(contadorPunts, 1); } else if (sweepAngle < 0) { sentit.Insert(contadorPunts, -1); };
+            angleInici.Insert(contadorCercles - 1, startAngle);
+            angleFinal.Insert(contadorCercles - 1, sweepAngle);
+            radi.Insert(contadorCercles - 1, radius);
+            if (sweepAngle > 0) { sentit.Insert(contadorCercles - 1, 1); } else if (sweepAngle < 0) { sentit.Insert(contadorCercles - 1, -1); };
 
             // Draw arc to screen.
             gObject.DrawArc(blackPen, (float)xRectangle, (float)yRectangle, (float)width, (float)height, startAngle, sweepAngle);
             richTextBox1.AppendText(Convert.ToString(puntX[contadorPunts]) + "," + Convert.ToString(puntY[contadorPunts]) + "\n");
+
+            moviments.Add(6);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -466,14 +470,14 @@ namespace TFG.ver.v02
         {
             Console.WriteLine(esCercle);
             Console.WriteLine(esAngle);
-            using (System.IO.StreamWriter file = new System.IO.StreamWriter(@path + filename + ".c", true))
-            {
-                if (puntX[contadorPunts] == inicialX && puntY[contadorPunts] == inicialY)
+            
+                if (Math.Truncate(puntX[contadorPunts]) == inicialX && Math.Truncate(puntY[contadorPunts]) == inicialY)
                 {
                     capes = Convert.ToInt32(textBox11.Text);
                     File.WriteAllText(path + filename, String.Empty);
                     movA = "moveMotorTarget(motorA," + (0 + Convert.ToDouble(textBox3.Text)) + ", 35); \n moveMotorTarget(motorB," + (0 + Convert.ToDouble(textBox4.Text)) + ", 35);\n";
-
+                using (System.IO.StreamWriter file = new System.IO.StreamWriter(@path + filename + ".c", true))
+                {
                     file.WriteLine("#pragma config(Motor,  motorA,          MotorA,        tmotorEV3_Medium, PIDControl, encoder)");
                     file.WriteLine("#pragma config(Motor,  motorB,          MotorB,        tmotorEV3_Medium, PIDControl, encoder)");
                     file.WriteLine("#pragma config(Motor,  motorC,          MotorC,        tmotorEV3_Large, PIDControl, encoder)");
@@ -482,35 +486,49 @@ namespace TFG.ver.v02
                     file.WriteLine(movA);
                     file.WriteLine("waitUntilMotorStop(motorA); waitUntilMotorStop(motorB);");
                     file.WriteLine("for (int i = 1; i <= " + capes + "; i ++) {");
-
-                    for (int i = 1; i <= puntX.Count - 1; i++)
+                }
+                    for (int i = 0; i <= moviments.Count - 1; i++)
                     {
                         //Cercle
-                        if (esCercle[i - 1] == 1)
+                        if (moviments[i] == 6)
                         {
-                            file.WriteLine("float radi = " + radi[i] * 10 + ";");
-                            file.WriteLine("float angleFinal2 = " + angleFinal[i] + ";");
-                            file.WriteLine("float angleInici2 = " + angleInici[i] +";");
+                            
+                            using (System.IO.StreamWriter file = new System.IO.StreamWriter(@path + filename + ".c", true))
+                            {
+                                file.WriteLine("float parRadi"+ afegirCercles +"= " + radi[afegirCercles] * 10 + ";");
+                                file.WriteLine("float parAngleFinal" + afegirCercles + " = " + angleFinal[afegirCercles] + ";");
+                                file.WriteLine("float parAngleInici" + afegirCercles + " = " + angleInici[afegirCercles] + ";");
+                            }
+                        afegirCercles++;
                         }
 
-                        //Moviments després del primer
-                        string signeX, signeY;
-                        float distanciaX = (float)(puntX[i] - puntX[i - 1]) * (float)10;
-                        float distanciaY = (float)(puntY[i] - puntY[i - 1]) * (float)-10;
+                    //Moviments després del primer
+                    //for (int j = 1; j <= puntX.Count - 1; j++) {
+                    //    distanciaX = (float)(puntX[j] - puntX[j - 1]) * (float)10;
+                    //    distanciaY = (float)(puntY[j] - puntY[j - 1]) * (float)-10;
 
-                        if (puntX[i - 1] > puntX[i]) { signeX = "-"; } else { signeX = ""; }
+                    //    if (puntX[j - 1] > puntX[j]) { signeX = "-"; } else { signeX = ""; }
 
-                        if (puntY[i] > puntY[i - 1]) { signeY = "-"; } else { signeY = ""; }
+                    //    if (puntY[j] > puntY[j - 1]) { signeY = "-"; } else { signeY = ""; }
+                    //}
+                        
 
-
+                    using (System.IO.StreamWriter file = new System.IO.StreamWriter(@path + filename + ".c", true))
+                    {
                         //Cercle
-                        if (esCercle[i - 1] == 1) {
-                            movA = "cercle(radi, angleFinal2, angleInici2);";
-                            file.WriteLine(movA);
+                        if (moviments[i] == 6) {
+                            
+                                movA = "cercle(parRadi" + (afegirCercles-1) + ", parAngleFinal" + (afegirCercles-1) + ", parAngleInici" + (afegirCercles-1) + ");";
+                                file.WriteLine(movA);
                         }
                         //Angle
-                        else if (esAngle[i - 1] == 1)
+                        else if (moviments[i] == 5)
                         {
+                            distanciaX = (float)(puntX[i + 1] - puntX[i]) * (float)10;
+                            distanciaY = (float)(puntY[i + 1] - puntY[i]) * (float)10;
+                            if (puntX[i - 1] > puntX[i]) { signeX = "-"; } else { signeX = ""; }
+
+                            if (puntY[i] > puntY[i - 1]) { signeY = "-"; } else { signeY = ""; }
                             double angle = (Math.Atan((Convert.ToDouble(textBox5.Text) / Convert.ToDouble(textBox2.Text)))) * (180 / Math.PI);
                             float velocitatX = (float)Math.Cos(angle * Math.PI / 180) * 35;
                             float velocitatY = (float)Math.Sin(angle * Math.PI / 180) * 35;
@@ -519,22 +537,32 @@ namespace TFG.ver.v02
                         //Recta
                         else
                         {
-                            movA = "moveMotorTarget(motorA," + Math.Abs(distanciaX) + ", " + signeX + "35); \n moveMotorTarget(motorB," + Math.Abs(distanciaY) + ", " + signeY + "35);\n";
-                            file.WriteLine(movA);
-                            file.WriteLine("waitUntilMotorStop(motorA); waitUntilMotorStop(motorB);");
+                                distanciaX = (float)(puntX[i + 1] - puntX[i]) * (float)10;
+                                distanciaY = (float)(puntY[i + 1] - puntY[i]) * (float)10;
+                                if (puntX[i + 1] > puntX[i]) { signeX = ""; } else { signeX = "-"; }
+                                if (puntY[i + 1] > puntY[i]) { signeY = "-"; } else { signeY = ""; }
+
+                                movA = "moveMotorTarget(motorA," + Math.Abs(distanciaX) + ", " + signeX + "35); \n moveMotorTarget(motorB," + Math.Abs(distanciaY) + ", " + signeY + "35);\n";
+                                file.WriteLine(movA);
+                                file.WriteLine("waitUntilMotorStop(motorA); waitUntilMotorStop(motorB);");
+                            
                         }
+                    }
 
                     }
+                using (System.IO.StreamWriter file = new System.IO.StreamWriter(@path + filename + ".c", true))
+                {
                     file.WriteLine("} }");
+                }
 
-                    for(int i = 0; i <= esAngle.Count - 1; i++)
+                    for(int i = 0; i <= moviments.Count - 1; i++)
                     {
-                        richTextBox2.AppendText(Convert.ToString(esAngle[i]));
-
+                        //richTextBox2.AppendText(Convert.ToString(esAngle[i]));
+                        richTextBox2.AppendText(Convert.ToString(moviments[i]));
                     }
                     
                 }
-                else if (puntX[contadorPunts] != inicialX || puntY[contadorPunts] != inicialY)
+                else if (Math.Truncate(puntX[contadorPunts]) != inicialX || Math.Truncate(puntY[contadorPunts]) != inicialY)
                 {
                     MessageBox.Show("Punt inicial i final no coincideien.");
                 }
@@ -546,7 +574,6 @@ namespace TFG.ver.v02
                 {
                     MessageBox.Show("Introdueix un nom vàlid per al fitxer a exportar.");
                 }
-            }
         }
     }
 }
