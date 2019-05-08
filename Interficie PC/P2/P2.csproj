@@ -122,8 +122,6 @@
     <None Include="packages.config" />
     <None Include="ver\v02\app.manifest" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="TFG\ver\v02\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
