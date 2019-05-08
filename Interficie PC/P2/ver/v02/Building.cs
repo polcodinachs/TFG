@@ -247,6 +247,11 @@ namespace TFG.ver.v02
             moviments.Add(3);
         }
 
+        private void canvas_Load(object sender, EventArgs e)
+        {
+
+        }
+
         //ESQUERRA
         private void button5_Click(object sender, EventArgs e)
         {
