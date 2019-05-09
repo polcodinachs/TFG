@@ -480,7 +480,7 @@ namespace TFG.ver.v02
                 {
                     capes = Convert.ToInt32(textBox11.Text);
                     File.WriteAllText(path + filename, String.Empty);
-                    movA = "moveMotorTarget(motorA," + (0 + Convert.ToDouble(textBox3.Text)) + ", 35); \n moveMotorTarget(motorB," + (0 + Convert.ToDouble(textBox4.Text)) + ", 35);\n";
+                    movA = "moveMotorTarget(motorA," + (0 + Convert.ToDouble(textBox3.Text)) * 10 + ", 35); \n moveMotorTarget(motorB," + (0 + Convert.ToDouble(textBox4.Text)) * 10 + ", 35);\n";
                 using (System.IO.StreamWriter file = new System.IO.StreamWriter(@path + filename + ".c", true))
                 {
                     file.WriteLine("#pragma config(Motor,  motorA,          MotorA,        tmotorEV3_Medium, PIDControl, encoder)");

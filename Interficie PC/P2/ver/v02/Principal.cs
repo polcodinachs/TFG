@@ -52,8 +52,8 @@ namespace TFG.ver.v02
             newMDIChild.MdiParent = this;
             // Display the new form.  
             newMDIChild.Show();
-            toolStripMenuItem2.Enabled = false;
-            toolStripMenuItem1.Enabled = false;
+            toolStripMenuItem2.Enabled = true;
+            toolStripMenuItem1.Enabled = true;
         }
 
         public void comboBox1_SelectedIndexChanged(object sender, EventArgs e)

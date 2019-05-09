@@ -25,21 +25,21 @@ void cercle(long radius, long sweepAngle, int startAngle){
 		case 90:
 			startAngle2 = 1;
 			if (sweepAngle > 0) {
-				sentitX = 1;
-				sentitY = -1;
-			} else {
 				sentitX = -1;
-				sentitY = -1;
+				sentitY = 1;
+			} else {
+				sentitX = 1;
+				sentitY = 1;
 			}
 			break;
 		case 180:
 			startAngle2 = 9;
 			if (sweepAngle > 0) {
-				sentitX = 1;
-				sentitY = -1;
-			} else {
-				sentitX = 1;
+				sentitX = -1;
 				sentitY = 1;
+			} else {
+				sentitX = -1;
+				sentitY = -1;
 			}
 			break;
 	}
