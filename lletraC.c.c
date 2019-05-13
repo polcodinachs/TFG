@@ -5,9 +5,9 @@
 task main() {
 moveMotorTarget(motorA,5500, 35);
  moveMotorTarget(motorB,0, 35);
-
 waitUntilMotorStop(motorA); waitUntilMotorStop(motorB);
-for (int i = 1; i <= 1; i ++) {
+wait1Msec(2000);
+for (int i = 1; i <= 4; i ++) {
 moveMotorTarget(motorA,2000, -35);
  moveMotorTarget(motorB,0, 35);
 
@@ -40,4 +40,7 @@ moveMotorTarget(motorA,0, -35);
  moveMotorTarget(motorB,1250, -35);
 
 waitUntilMotorStop(motorA); waitUntilMotorStop(motorB);
+
+moveMotorTarget(motorC, 10, 50);
+waitUntilMotorStop(motorC);
 } }

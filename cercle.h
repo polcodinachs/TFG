@@ -44,9 +44,9 @@ void cercle(long radius, long sweepAngle, int startAngle){
 			break;
 	}
 
-	for(int i = startAngle2; i <= (startAngle2 + sweepAngle2); i++){
-		moveMotorTarget(motorA, (cosDegrees(10*i) * radius / 6), (cosDegrees(10*i)* sentitX * 50));
-		moveMotorTarget(motorB, (sinDegrees(10*i) * radius / 6), (sinDegrees(10*i)* sentitY * 50));
+	for(int j = startAngle2; j <= (startAngle2 + sweepAngle2); j++){
+		moveMotorTarget(motorA, (cosDegrees(10*j) * radius / 6), (cosDegrees(10*j)* sentitX * 50));
+		moveMotorTarget(motorB, (sinDegrees(10*j) * radius / 6), (sinDegrees(10*j)* sentitY * 50));
 		waitUntilMotorStop(motorA);
 		waitUntilMotorStop(motorB);
 	}

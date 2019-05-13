@@ -7,7 +7,7 @@ moveMotorTarget(motorA,0, 35);
  moveMotorTarget(motorB,3000, 35);
 waitUntilMotorStop(motorA); waitUntilMotorStop(motorB);
 wait1Msec(2000);
-for (int i = 1; i <= 5; i ++) {
+for (int i = 1; i <= 4; i ++) {
 moveMotorTarget(motorA,1250, 35);
  moveMotorTarget(motorB,0, 35);
 waitUntilMotorStop(motorA); waitUntilMotorStop(motorB);
