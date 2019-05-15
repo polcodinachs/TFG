@@ -37,8 +37,7 @@ namespace TFG.ver.v02
 
         List<double> puntX = new List<double>();
         List<double> puntY = new List<double>();
-        List<int> esCercle = new List<int>();
-        List<int> esAngle = new List<int>();
+
         List<double> radi = new List<double>();
         List<double> angleInici = new List<double>();
         List<double> angleFinal = new List<double>();
@@ -506,17 +505,6 @@ namespace TFG.ver.v02
                             }
                         afegirCercles++;
                         }
-
-                    //Moviments després del primer
-                    //for (int j = 1; j <= puntX.Count - 1; j++) {
-                    //    distanciaX = (float)(puntX[j] - puntX[j - 1]) * (float)10;
-                    //    distanciaY = (float)(puntY[j] - puntY[j - 1]) * (float)-10;
-
-                    //    if (puntX[j - 1] > puntX[j]) { signeX = "-"; } else { signeX = ""; }
-
-                    //    if (puntY[j] > puntY[j - 1]) { signeY = "-"; } else { signeY = ""; }
-                    //}
-                        
 
                     using (System.IO.StreamWriter file = new System.IO.StreamWriter(@path + filename + ".c", true))
                     {
