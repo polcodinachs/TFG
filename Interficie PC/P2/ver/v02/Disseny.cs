@@ -102,8 +102,6 @@ namespace TFG.ver.v02
 
                     puntX.Add(inicialX);
                     puntY.Add(inicialY);
-                    esCercle.Add(0);
-                    esAngle.Add(0);
                     richTextBox1.AppendText(Convert.ToString(puntX[0]) + "," + Convert.ToString(puntY[0]) + "\n");
                     //richTextBox2.AppendText(Convert.ToString(esCercle[contadorPunts]) + "\n");
                     puntX.Add(inicialX );
@@ -127,8 +125,6 @@ namespace TFG.ver.v02
                 else {
                     puntX.Add(puntX[contadorPunts - 1]);
                     puntY.Add(puntY[contadorPunts - 1] - Convert.ToDouble(textBox1.Text));
-                    esCercle.Add(0);
-                    esAngle.Add(0);
                     Console.WriteLine(puntX[contadorPunts] + "," + puntY[contadorPunts]);
                     PointF point1 = new PointF((float)(puntX[contadorPunts - 1]), (float)(puntY[contadorPunts - 1]));
                     PointF point2 = new PointF((float)(puntX[contadorPunts]), (float)((puntY[contadorPunts])));
@@ -140,9 +136,7 @@ namespace TFG.ver.v02
             }
             try
             {
-                label1.Text = Convert.ToString(puntX[contadorPunts - 1] + "," + puntY[contadorPunts - 1] + "///" + puntX[contadorPunts] + "," + puntY[contadorPunts]);
-                label3.Text = Convert.ToString(puntX.Count + "," + puntY.Count);
-                label4.Text = Convert.ToString(contadorPunts);
+
             }
             catch
             {
@@ -166,8 +160,6 @@ namespace TFG.ver.v02
             {
                 puntX.Add(inicialX);
                 puntY.Add(inicialY);
-                esCercle.Add(0);
-                esAngle.Add(0);
                 richTextBox1.AppendText(Convert.ToString(puntX[0]) + "," + Convert.ToString(puntY[0]) + "\n");
                 //richTextBox2.AppendText(Convert.ToString(esCercle[contadorPunts]) + "\n");
                 puntX.Add(inicialX);
@@ -184,8 +176,6 @@ namespace TFG.ver.v02
                 contadorPunts++;
                 puntX.Add(puntX[contadorPunts - 1]);
                 puntY.Add(puntY[contadorPunts - 1] + Convert.ToDouble(textBox1.Text));
-                esCercle.Add(0);
-                esAngle.Add(0);
                 Console.WriteLine(puntX[contadorPunts] + "," + puntY[contadorPunts]);
                 PointF point1 = new PointF((float)(puntX[contadorPunts - 1]), (float)(puntY[contadorPunts - 1]));
                 PointF point2 = new PointF((float)(puntX[contadorPunts]), (float)((puntY[contadorPunts])));
@@ -193,9 +183,6 @@ namespace TFG.ver.v02
                 richTextBox1.AppendText(Convert.ToString(puntX[contadorPunts]) + "," + Convert.ToString(puntY[contadorPunts]) + "\n");
                 contadorLinies++;
             }
-            label1.Text = Convert.ToString(puntX[contadorPunts - 1] + "," + puntY[contadorPunts - 1] + "///" + puntX[contadorPunts] + "," + puntY[contadorPunts]);
-            label3.Text = Convert.ToString(puntX.Count + "," + puntY.Count);
-            label4.Text = Convert.ToString(contadorPunts);
 
             moviments.Add(2);
         }
@@ -213,8 +200,6 @@ namespace TFG.ver.v02
             {
                 puntX.Add(inicialX);
                 puntY.Add(inicialY);
-                esCercle.Add(0);
-                esAngle.Add(0);
                 richTextBox1.AppendText(Convert.ToString(puntX[0]) + "," + Convert.ToString(puntY[0]) + "\n");
                 puntX.Add(inicialX + Convert.ToDouble(textBox1.Text));
                 puntY.Add(inicialY);
@@ -230,8 +215,6 @@ namespace TFG.ver.v02
                 contadorPunts++;
                 puntX.Add(puntX[contadorPunts - 1] + Convert.ToDouble(textBox1.Text));
                 puntY.Add(puntY[contadorPunts - 1]);
-                esCercle.Add(0);
-                esAngle.Add(0);
                 Console.WriteLine(puntX[contadorPunts] + "," + puntY[contadorPunts]);
                 PointF point1 = new PointF((float)(puntX[contadorPunts - 1]), (float)(puntY[contadorPunts - 1]));
                 PointF point2 = new PointF((float)(puntX[contadorPunts]), (float)((puntY[contadorPunts])));
@@ -239,9 +222,7 @@ namespace TFG.ver.v02
                 richTextBox1.AppendText(Convert.ToString(puntX[contadorPunts]) + "," + Convert.ToString(puntY[contadorPunts]) + "\n");
                 contadorLinies++;
             }
-            label1.Text = Convert.ToString(puntX[contadorPunts - 1] + "," + puntY[contadorPunts - 1] + "///" + puntX[contadorPunts] + "," + puntY[contadorPunts]);
-            label3.Text = Convert.ToString(puntX.Count + "," + puntY.Count);
-            label4.Text = Convert.ToString(contadorPunts);
+
 
             moviments.Add(3);
         }
@@ -264,8 +245,6 @@ namespace TFG.ver.v02
             {
                 puntX.Add(inicialX);
                 puntY.Add(inicialY);
-                esCercle.Add(0);
-                esAngle.Add(0);
                 richTextBox1.AppendText(Convert.ToString(puntX[0]) + "," + Convert.ToString(puntY[0]) + "\n");
                 //richTextBox2.AppendText(Convert.ToString(esCercle[contadorPunts]) + "\n");
                 puntX.Add(inicialX - Convert.ToDouble(textBox1.Text));
@@ -282,8 +261,6 @@ namespace TFG.ver.v02
                 contadorPunts++;
                 puntX.Add(puntX[contadorPunts - 1] - Convert.ToDouble(textBox1.Text));
                 puntY.Add(puntY[contadorPunts - 1]);
-                esCercle.Add(0);
-                esAngle.Add(0);
                 Console.WriteLine(puntX[contadorPunts] + "," + puntY[contadorPunts]);
                 PointF point1 = new PointF((float)(puntX[contadorPunts - 1]), (float)(puntY[contadorPunts - 1]));
                 PointF point2 = new PointF((float)(puntX[contadorPunts]), (float)((puntY[contadorPunts])));
@@ -291,9 +268,6 @@ namespace TFG.ver.v02
                 richTextBox1.AppendText(Convert.ToString(puntX[contadorPunts]) + "," + Convert.ToString(puntY[contadorPunts]) + "\n");
                 contadorLinies++;
             }
-            label1.Text = Convert.ToString(puntX[contadorPunts - 1] + "," + puntY[contadorPunts - 1] + "///" + puntX[contadorPunts] + "," + puntY[contadorPunts]);
-            label3.Text = Convert.ToString(puntX.Count + "," + puntY.Count);
-            label4.Text = Convert.ToString(contadorPunts);
 
             moviments.Add(4);
         }
@@ -312,8 +286,6 @@ namespace TFG.ver.v02
             {
                 puntX.Add(inicialX);
                 puntY.Add(inicialY);
-                esCercle.Add(0);
-                esAngle.Add(1);
                 richTextBox1.AppendText(Convert.ToString(puntX[0]) + "," + Convert.ToString(puntY[0]) + "\n");
                 //richTextBox2.AppendText(Convert.ToString(esCercle[contadorPunts]) + "\n");
                 puntX.Add(inicialX + Convert.ToDouble(textBox2.Text));
@@ -330,8 +302,7 @@ namespace TFG.ver.v02
                 contadorPunts++;
                 puntX.Add(puntX[contadorPunts - 1] + Convert.ToDouble(textBox2.Text));
                 puntY.Add(puntY[contadorPunts - 1] - Convert.ToDouble(textBox5.Text));
-                esCercle.Add(0);
-                esAngle.Add(1);
+
                 Console.WriteLine(puntX[contadorPunts] + "," + puntY[contadorPunts]);
                 PointF point1 = new PointF((float)(puntX[contadorPunts - 1]), (float)(puntY[contadorPunts - 1]));
                 PointF point2 = new PointF((float)(puntX[contadorPunts]), (float)((puntY[contadorPunts])));
@@ -342,9 +313,6 @@ namespace TFG.ver.v02
 
             double angle = Math.Atan((Convert.ToDouble(textBox5.Text) / Convert.ToDouble(textBox2.Text))) * 180 / Math.PI;
             label9.Text = Convert.ToString(angle);
-            label1.Text = Convert.ToString(puntX[contadorPunts - 1] + "," + puntY[contadorPunts - 1] + "///" + puntX[contadorPunts] + "," + puntY[contadorPunts]);
-            label3.Text = Convert.ToString(puntX.Count + "," + puntY.Count);
-            label4.Text = Convert.ToString(contadorPunts);
 
             moviments.Add(5);
         }
@@ -356,8 +324,6 @@ namespace TFG.ver.v02
             contadorPunts++;
             contadorCercles++;
 
-            esCercle.Add(1);
-            esAngle.Add(0);
 
             Graphics gObject = CreateGraphics();
             // Create pen.
@@ -472,8 +438,6 @@ namespace TFG.ver.v02
 
         public void building()
         {
-            Console.WriteLine(esCercle);
-            Console.WriteLine(esAngle);
             
                 if (true)
                 {

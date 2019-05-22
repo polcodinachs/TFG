@@ -371,6 +371,9 @@ void lletraI(){
 
 //Lletra K
 void lletraK() {
+	wait1Msec(2000);
+	playSound(soundBeepBeep);
+  wait1Msec(1000);
 	for(int i = 1; i <= 6; i++) {
 		moveMotorTarget(motorB, 5168.31, 35);
 		waitUntilMotorStop(motorB);

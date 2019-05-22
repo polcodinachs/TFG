@@ -48,8 +48,6 @@ namespace TFG
             //{
             //    comboBox1.Items.Add(s);
             //}
-
-            textBox4.KeyDown += TextBox4_KeyDown;
         }
 
         void MainFormFormClosing(object sender, FormClosingEventArgs e)
@@ -227,12 +225,11 @@ namespace TFG
             try
             {
                 inputVelocitatA = Convert.ToDouble(textBox1.Text);
-                label12.Text = Convert.ToString(inputVelocitatA);
                 enviarDades(motor, moviment, inputVelocitatA);
             }
             catch
             {
-                label12.Text = "Introdueix un valor vàlid";
+
             }
 
         }
@@ -242,13 +239,11 @@ namespace TFG
             motor = 1;
             try
             {
-                inputVelocitatA = Convert.ToDouble(trackBar1.Value);
-                label12.Text = Convert.ToString(inputVelocitatA);
                 enviarDades(motor, moviment, inputVelocitatA);
             }
             catch
             {
-                label12.Text = "Introdueix un valor vàlid";
+
             }
         }
 
@@ -324,12 +319,11 @@ namespace TFG
             try
             {
                 inputVelocitatB = Convert.ToDouble(textBox2.Text);
-                label11.Text = Convert.ToString(inputVelocitatB);
                 enviarDades(motor, moviment, inputVelocitatB);
             }
             catch
             {
-                label12.Text = "Introdueix un valor vàlid";
+
             }
         }
 
@@ -405,12 +399,11 @@ namespace TFG
             try
             {
                 inputVelocitatC = Convert.ToDouble(textBox3.Text);
-                label24.Text = Convert.ToString(inputVelocitatC);
                 enviarDades(motor, moviment, inputVelocitatC);
             }
             catch
             {
-                label24.Text = "Introdueix un valor vàlid";
+
             }
         }
 

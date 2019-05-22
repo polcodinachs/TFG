@@ -59,7 +59,7 @@ namespace TFG.ver.v02
         public void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             portName = comboBox1.Text;
-            label1.Text = portName;
+            //label1.Text = portName;
         }
 
         public void button1_Click(object sender, EventArgs e)
@@ -67,7 +67,7 @@ namespace TFG.ver.v02
             SerialPortClass.serialPort1.Open();
             if (SerialPortClass.serialPort1.IsOpen == true)
             {
-                label2.Text = "OK";
+                //label2.Text = "OK";
                 toolStripMenuItem1.Enabled = true;
                 toolStripMenuItem2.Enabled = true;
                 button1.Enabled = false;
@@ -75,7 +75,7 @@ namespace TFG.ver.v02
             }
             else
             {
-                label2.Text = "Desconnectat";
+                //label2.Text = "Desconnectat";
             }
         }
 

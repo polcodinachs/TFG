@@ -33,7 +33,6 @@ namespace TFG
 
         public void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            label1.Text = Convert.ToString(listBox1.SelectedIndex+10);
             enviarDades(listBox1.SelectedIndex+10);
             switch (listBox1.SelectedIndex) {
                 case 0: //QUADRAT
@@ -57,10 +56,6 @@ namespace TFG
             int formulariDisseny = 2;
             int figura = listBox1.SelectedIndex;
             string dadesEnviar = Convert.ToString(formulariDisseny + "," + figura);
-
-  
-
-            label6.Text = dadesEnviar;
         }
         
 
@@ -87,6 +82,21 @@ namespace TFG
             {
                 MessageBox.Show("No s'ha pogut enviar, revisa l'apartat de comunicacions");
             }
+        }
+
+        private void Disseny_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

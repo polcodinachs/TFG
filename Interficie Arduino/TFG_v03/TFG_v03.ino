@@ -8,11 +8,10 @@ int instruction[6] = {5,0,0,0,0,0};
 
 void setup()
 {
-  Wire.begin(0x04); // set the slave address
-  Wire.onRequest(requestEvent); // Sending information back to the NXT/EV3
-  Wire.onReceive(receiveI2C); // Receiving information!
+  Wire.begin(0x04); // Adreça de l'esclau
+  Wire.onRequest(requestEvent); // Retornar informació a l'EV3
+  Wire.onReceive(receiveI2C); // Rebre informació de l'EV3
   
-  // Debugging
   Serial.begin(9600);
     
 }
@@ -36,7 +35,7 @@ String datosB;
 String datosC;
 
 
-// When data is received from NXT/EV3, this function is called.
+//Quan es rep informació des de l'EV3
 void receiveI2C(int bytesIn)
 {
   read_byte = bytesIn;
